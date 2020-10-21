@@ -9,4 +9,3 @@ E:\testProject\NSP\Model\bin\Debug\Model.pdb
 E:\testProject\NSP\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\testProject\NSP\Model\obj\Debug\Model.dll
 E:\testProject\NSP\Model\obj\Debug\Model.pdb
-E:\testProject\NSP\Model\obj\Debug\Model.csprojAssemblyReference.cache
