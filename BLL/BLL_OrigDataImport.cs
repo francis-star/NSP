@@ -99,7 +99,9 @@ namespace BLL
                 switch (model.TableName.Trim())
                 {
                     case "CXT_OriginalDataDts":
-                        sb.Append("SELECT ODD_Name[客户名称],ODD_Phone[座机号码] FROM dbo.CXT_OriginalDataDts WHERE 1=1");
+                        sb.Append("SELECT ODD_OD_Code[客户编码],ODD_Name[客户名称],ODD_Phone[座机号码],ODD_Address[地址],ODD_LinkMan[联系人],ODD_LinkPhone[联系电话],ODD_IsBill[是否计费]," +
+                            "DuplicateData[重复数据],ApprovedUser[已审用户],UnsubscribedUser[退订用户],RefundUser[退费用户],BlackList[黑名单],ODD_LinkPhone[联系号码] " +
+                            "TSNumber[投诉号码],Keywords_high[关键字(高)],Keywords_low[关键字(低)],RepetitionType[重复类型],ODD_Business[业务名称],ODD_IsBill[是否计费],TSNature[投诉性质],TSSource[投诉来源],OpenDate[开通时间],UnsubscribeTime[退订时间] FROM dbo.CXT_OriginalDataDts WHERE 1=1");
                         if (!string.IsNullOrEmpty(model.ODD_OD_Code))
                         {
                             sb.Append(" AND ODD_OD_Code ='" + model.ODD_OD_Code + "'");
@@ -226,7 +228,9 @@ namespace BLL
                         }
                         break;
                     case "MQY_OriginalDataDts":
-                        sb.Append("SELECT ODD_Name[客户名称],ODD_Phone[座机号码] FROM dbo.MQY_OriginalDataDts WHERE 1=1");
+                        sb.Append("SELECT ODD_OD_Code[客户编码],ODD_Name[客户名称],ODD_Phone[座机号码],ODD_Address[地址],ODD_LinkMan[联系人],ODD_LinkPhone[联系电话],ODD_IsBill[是否计费]," +
+                           "DuplicateData[重复数据],ApprovedUser[已审用户],UnsubscribedUser[退订用户],RefundUser[退费用户],BlackList[黑名单],ODD_LinkPhone[联系号码] " +
+                           "TSNumber[投诉号码],Keywords_high[关键字(高)],Keywords_low[关键字(低)],RepetitionType[重复类型],ODD_Business[业务名称],ODD_IsBill[是否计费],TSNature[投诉性质],TSSource[投诉来源],OpenDate[开通时间],UnsubscribeTime[退订时间] FROM dbo.MQY_OriginalDataDts WHERE 1=1");
                         if (!string.IsNullOrEmpty(model.ODD_OD_Code))
                         {
                             sb.Append(" AND ODD_OD_Code ='" + model.ODD_OD_Code + "'");
@@ -354,7 +358,9 @@ namespace BLL
 
                         break;
                     case "WQT_OriginalDataDts":
-                        sb.Append("SELECT ODD_Name[客户名称],ODD_Phone[座机号码] FROM dbo.WQT_OriginalDataDts WHERE 1=1");
+                        sb.Append("SELECT ODD_OD_Code[客户编码],ODD_Name[客户名称],ODD_Phone[座机号码],ODD_Address[地址],ODD_LinkMan[联系人],ODD_LinkPhone[联系电话],ODD_IsBill[是否计费]," +
+                           "DuplicateData[重复数据],ApprovedUser[已审用户],UnsubscribedUser[退订用户],RefundUser[退费用户],BlackList[黑名单],ODD_LinkPhone[联系号码] " +
+                           "TSNumber[投诉号码],Keywords_high[关键字(高)],Keywords_low[关键字(低)],RepetitionType[重复类型],ODD_Business[业务名称],ODD_IsBill[是否计费],TSNature[投诉性质],TSSource[投诉来源],OpenDate[开通时间],UnsubscribeTime[退订时间] FROM dbo.WQT_OriginalDataDts WHERE 1=1");
                         if (!string.IsNullOrEmpty(model.ODD_OD_Code))
                         {
                             sb.Append(" AND ODD_OD_Code ='" + model.ODD_OD_Code + "'");
@@ -494,7 +500,9 @@ namespace BLL
                         break;
                         //实时保导出
                     case "SSB_OriginalDataDts":
-                        sb.Append("SELECT ODD_Name[客户名称],ODD_Phone[计费号码（预）] FROM dbo.SSB_OriginalDataDts WHERE 1=1");
+                        sb.Append("SELECT ODD_OD_Code[客户编码],ODD_Name[客户名称],ODD_Phone[座机号码],ODD_Address[地址],ODD_LinkMan[联系人],ODD_LinkPhone[联系电话],ODD_IsBill[是否计费]," +
+                       "DuplicateData[重复数据],ApprovedUser[已审用户],UnsubscribedUser[退订用户],RefundUser[退费用户],BlackList[黑名单],ODD_LinkPhone[联系号码] " +
+                       "TSNumber[投诉号码],Keywords_high[关键字(高)],Keywords_low[关键字(低)],RepetitionType[重复类型],ODD_Business[业务名称],ODD_IsBill[是否计费],TSNature[投诉性质],TSSource[投诉来源],OpenDate[开通时间],UnsubscribeTime[退订时间] FROM dbo.SSB_OriginalDataDts WHERE 1=1");
                         if (!string.IsNullOrEmpty(model.ODD_OD_Code))
                         {
                             sb.Append(" AND ODD_OD_Code ='" + model.ODD_OD_Code + "'");
