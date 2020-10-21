@@ -4,3 +4,8 @@ D:\Project\全国公司支撑系统(PC)\Common\obj\Debug\Common.csprojAssemblyRe
 D:\Project\全国公司支撑系统(PC)\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 D:\Project\全国公司支撑系统(PC)\Common\obj\Debug\Common.dll
 D:\Project\全国公司支撑系统(PC)\Common\obj\Debug\Common.pdb
+E:\testProject\NSP\Common\bin\Debug\Common.dll
+E:\testProject\NSP\Common\bin\Debug\Common.pdb
+E:\testProject\NSP\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+E:\testProject\NSP\Common\obj\Debug\Common.dll
+E:\testProject\NSP\Common\obj\Debug\Common.pdb

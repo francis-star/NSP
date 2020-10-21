@@ -265,9 +265,8 @@ namespace DAL
         public string GetInvalidSSBViewData(InOriginViewModle model)
         {
             var db = DbService.Instance;
-
             int invalidTotalCount = 0;
-            var invalidDataList = db.Queryable<SSB_OriginalDataDts>().Where(it =>it.ODD_OD_Code == model.ODCode &&  it.ODD_Type != "1")
+            var invalidDataList = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type != "1")
                 .WhereIF(!string.IsNullOrEmpty(model.ApprovedUser), it => it.ApprovedUser == model.ApprovedUser)
                 .WhereIF(!string.IsNullOrEmpty(model.BlackList), it => it.BlackList == model.BlackList)
                 .WhereIF(!string.IsNullOrEmpty(model.BusinessName), it => it.ODD_Business == model.BusinessName)
@@ -313,6 +312,7 @@ namespace DAL
                 validTotalCount = validTotalCount
             };
             return JsonConvert.SerializeObject(result);
+
         }
 
         /// <summary>

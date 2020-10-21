@@ -4,3 +4,8 @@ D:\Project\全国公司支撑系统(PC)\Model\obj\Debug\Model.csprojAssemblyRefe
 D:\Project\全国公司支撑系统(PC)\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\Project\全国公司支撑系统(PC)\Model\obj\Debug\Model.dll
 D:\Project\全国公司支撑系统(PC)\Model\obj\Debug\Model.pdb
+E:\testProject\NSP\Model\bin\Debug\Model.dll
+E:\testProject\NSP\Model\bin\Debug\Model.pdb
+E:\testProject\NSP\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\testProject\NSP\Model\obj\Debug\Model.dll
+E:\testProject\NSP\Model\obj\Debug\Model.pdb

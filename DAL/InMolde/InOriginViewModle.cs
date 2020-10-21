@@ -10,6 +10,7 @@ namespace DAL.InMolde
     {
 
         public string ODCode { get; set; }
+
         /// <summary>
         /// 客户名称
         /// </summary>
