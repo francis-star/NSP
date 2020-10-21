@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>(新)审核管理中心</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" href="../../JS/layer/skin/layer.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+    <script type="text/javascript" src="../../JS/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../JS/layer/layer.js"></script>
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGridPaging.js"></script>
+    <script src="../../JS/HCWeb2016.js"></script>
+    <script src="../../JSHC/Pub.js" type="text/javascript"></script>
+    <script src="../../JSHC/XFB/CustomerService.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="toptoolbar"></div>
+    <div id="SearchDiv" class="SearchDiv" style="margin-left: 5px; margin-top:5px; width: 98%">
+        <table class="bor1 w1 b-l-p2">
+            <tr>
+                <td class="b-bg w10 t-c">
+                    客户姓名
+                </td>
+                <td class="w20">
+                    <input id="CustName" type="text" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    联系电话
+                </td>
+                <td class="w20">
+                    <input id="CustPhone" type="text" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    计费号码
+                </td>
+                <td class="w20" colspan="3">
+                    <input id="CustBillNumber" type="text" />
+                </td>
+                <!--<td class="b-bg w10 t-c">
+                    联系人
+                </td>
+                <td class="w20">
+                    <input type="text" id="CustLinkman" />
+                </td>-->
+            </tr>
+            <tr>
+                <td class="b-bg w10 t-c">
+                    客户状态
+                </td>
+                <td class="w20">
+                    <input type="text" id="CustState" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    开通时间
+                </td>
+                <td class="w20">
+                    <input type="text" id="CustOpenDate" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    至
+                </td>
+                <td class="w20">
+                    <input type="text" id="CustEndDate" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    外呼人员
+                </td>
+                <td class="w20">
+                    <input type="text" id="CustLinkPhone" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="grid" style="margin-left: 5px; margin-top:5px;"></div>
+</body>
+</html>

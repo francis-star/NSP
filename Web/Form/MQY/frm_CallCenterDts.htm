@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>(民)营销中心_编辑窗体</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+
+    <script src="../../JS/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../JSHC/Pub.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+
+    <script src="../../JS/Autocomplete/jquery.autocomplete.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+
+    <script src="../../JS/artDialog4.1.4/artDialog.source.js?skin=default" type="text/javascript"></script>
+
+    <script src="../../JS/artDialog4.1.4/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <link href="../../JS/layer/skin/layer.css" rel="stylesheet" />
+    <script src="../../JS/layer/layer.js"></script>
+    <script src="../../JS/HCWeb2016.js"></script>
+    <script src="../../JSHC/MQY/CallCenterDts.js" type="text/javascript"></script>
+
+
+    <style type="text/css">
+        #CustAddress {
+            width: 447px;
+        }
+
+        .l-text-wrapper {
+            position: relative;
+            float: left;
+        }
+    </style>
+    <style type="text/css">
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        .tc {
+            width: 300px;
+            height: 220px;
+            border: 1px solid #999;
+            position: fixed;
+            top: 10%;
+            left: 40%;
+            background: #fff;
+        }
+
+        .cla1 {
+            margin-right: 5%;
+            margin-top: 10px;
+            margin-left: 5px;
+            height: 20px;
+            width: 60%;
+        }
+
+        .cla2 {
+            padding: 2px 5px;
+            width: 20%;
+        }
+
+        .div1 {
+            margin: 10px 5px;
+            border: 1px solid #999;
+            padding: 5px;
+            font-size: 14px;
+            height: 160px;
+            overflow: scroll;
+        }
+
+        .gb {
+            font-size: 16px;
+            float: right;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="toptoolbar">
+    </div>
+    <div id="SearchDiv2" class="SearchDiv" style="margin-left: 5px; margin-top: 5px; width: 98%; display:none;">
+        <table class="bor1 w1 b-l-p2">
+            <tr id="ODDP">
+                <td class="b-bg w10 t-c" style="text-align:left;color:red;">
+                    退回原因:<span id="SP_ReturnContent"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="SearchDiv" class="SearchDiv" style="margin-left: 5px; margin-top: 5px; width: 98%">
+        <table class="bor1 w1 b-l-p2">
+            <tr id="ODDP">
+                <td class="b-bg w10 t-c">
+                    查询号码
+                </td>
+                <td class="w20">
+                    <input type="text" id="ODDPhone" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    查询名称
+                </td>
+                <td class="w20">
+                    <input type="text" id="ODDName" />
+                </td>
+                <td class="b-bg w10 t-c"></td>
+                <td class="w20"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="SearchDiv1" class="SearchDiv" style="margin-left: 5px; margin-top: 5px; width: 98%; display:none;">
+        <table class="bor1 w1 b-l-p2">
+            <tr id="ODDP">
+                <td class="b-bg w10 t-c" style="text-align:left;">
+                    客户单状态:<span id="SP_State"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="SearchDiv3" class="SearchDiv" style="margin-left: 5px; margin-top: 5px; width: 98%">
+        <table class="bor1 w1 b-l-p2">
+            <tr>
+                <td class="b-bg w10 t-c">
+                    客户名称<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input id="CustName" type="text" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    客户关键字<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input id="CustNameKey" type="text" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    座机号码<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input id="CustPhone1" type="text" disabled="disabled" />
+                </td>
+            </tr>
+            <tr>
+
+                <td class="b-bg w10 t-c">
+                    联系人<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input type="text" id="Custlinkman" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    联系电话<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input type="text" id="CustlinkPhone" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    <span id="spanIsView" style="display:none"> 是否显示</span>
+                </td>
+                <td class="w20">
+                    <p id="td_Cust_IsView" style="display:none"> <input type="text" id="Cust_IsView" /></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="b-bg w10 t-c">
+                    地址<span style="color: Red">*</span>
+                </td>
+                <td class="w20" colspan="5">
+
+                    <input type="text" id="Province" />  <input type="text" id="City" />  <input type="text" id="District" />  <input type="text" id="CustAddress" style="width:32%" disabled="disabled" /><img id="dw" src="../../Images/dingwei.png" style="vertical-align: middle;" />
+                </td>
+
+            </tr>
+            <tr>
+                <td class="b-bg w10 t-c">
+                    是否计费
+                </td>
+                <td class="w20">
+                    <input type="text" id="Cust_IsBill" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    计费金额<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input type="number" id="Cust_BillMoney" disabled="disabled" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    计费号码<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input type="text" id="Cust_BillNumber" />
+                </td>
+            </tr>
+            <tr>
+                <td class="b-bg w10 t-c">
+                    计费号码归属地<span style="color: Red">*</span>
+                </td>
+                <td class="w20" colspan="5">
+
+                    <input type="text" id="jfProvince" />  <input type="text" id="jfCity" />
+                </td>
+
+            </tr>
+            <tr>
+                <td class="b-bg w10 t-c">
+                    客户性质
+                </td>
+                <td class="w20">
+                    <input type="text" id="Cust_Nature" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    录音编码<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input type="text" id="Cust_KFVoice" />
+                </td>
+                <td class="b-bg w10 t-c">
+                    数据来源
+                </td>
+                <td class="w20">
+                    <input type="text" id="Cust_Source" />
+                </td>
+            </tr>
+            <tr id="tr_Cust_WH_UserName" style="display:none">
+                <td class="b-bg w10 t-c">
+                    外呼人员<span style="color: Red">*</span>
+                </td>
+                <td class="w20">
+                    <input type="text" id="Cust_WH_UserName" />
+                </td>
+                <td class="b-bg w10 t-c"></td>
+                <td class="w20"></td>
+                <td class="b-bg w10 t-c"></td>
+                <td class="w20"></td>
+            </tr>
+            <tr id="tr_Cust_WH_Remark">
+                <td class="b-bg w10 t-c">
+                    备注
+                </td>
+                <td class="w20" colspan="5">
+                    <textarea id="Cust_WH_Remark" style="width:93.5%;height:80px;" maxlength="500"></textarea>
+                </td>
+            </tr>
+
+        </table>
+        <div id="div_BH_Remark" style="display:none">
+            <hr id="separatorLine" style="margin-top:20px;height:1px;border:none; border-bottom:#808080 1px dashed" />
+            <div>
+                <div style="float:left;width:48%; margin-top:10px;">修改原因<span style="color: Red">*</span></div><div style="float:left; width:50%;text-align:right; margin-top:10px;"><span id="viewhistory" style="cursor:pointer;color:blue">历史记录</span></div>
+            </div>
+            <div style="float:left;width:100%;margin-top:10px;">
+                <textarea id="BH_Remark" style="width:100%;height:80px;" maxlength="500"></textarea>
+            </div>
+        </div>
+        <div id="search-suggest" style="width: 181px; display: none; overflow: scroll; height: 100px"
+             class="suggest">
+            <ul id="search-result">
+                <li>搜索结果1</li>
+                <li>搜索结果2</li>
+            </ul>
+        </div>
+        <div id="tc" class="tc" style="display:none;">
+            <div><span class="gb">X</span></div>
+            <div>
+                <input id="MapSearchStr" class="cla1" type="text" />
+                <input class="cla2" type="button" value="搜索" onclick="GetMapApiSearch();" />
+            </div>
+            <div id="MapAPISearch" class="div1">
+
+            </div>
+        </div>
+</body>
+</html>
+<script type="text/javascript">
+    $("#search-suggest").bind('click', function () {
+        $("#search-suggest").hide();
+    });
+    $(".gb").click(function () {
+        $("#tc").attr("style", "display:none");
+    })
+    $("#dw").click(function () {
+        GetMapApiSearch();
+        $("#tc").attr("style", "display:block");
+    })
+</script>

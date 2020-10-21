@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Web_NewSendMsg_NewSendMsg" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://webservice.jshcsoft.com/SSMSAPI/NewSendMsg.asmx</Value>
+    </Setting>
+    <Setting Name="Web_ServiceUpFile_UpFileWeb" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://support.jshcsoft.com/HcUpFile/upfileweb.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

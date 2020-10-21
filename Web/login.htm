@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>全国支撑系统</title>
+
+    <script src="JS/jquery-1.9.0.min.js"></script>
+    <link href="JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+
+    <script src="JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+
+    <script src="JS/lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+
+    <script src="JS/HCWeb2016.js"></script>
+    <script src="JS/layer/layer.js"></script>
+    <link href="JS/layer/skin/layer.css" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        BODY {
+            background-position: 50% bottom;
+            font-size: 12px;
+            background-image: url(images/Top/bg_login.png);
+            margin: 0px;
+            background-repeat: repeat-x;
+            background-color: #a2d5f0;
+        }
+
+        TD {
+            font-size: 12px;
+        }
+
+        DIV {
+            font-size: 12px;
+        }
+
+        #login {
+            background-position: 50% bottom;
+            background-image: url(images/bg_login.png);
+            color: white;
+            background-repeat: repeat-x;
+            background-color: #a2d5f0;
+        }
+
+            #login #root {
+                background-image: url(images/login_root.png);
+            }
+
+            #login #main {
+                background-image: url(images/login_main.png);
+                background-repeat: round;
+            }
+
+            #login TD {
+                color: white;
+            }
+
+            #login A {
+                color: white;
+                text-decoration: none;
+            }
+
+            #login .textbox {
+                width: 180px;
+            }
+
+        .code {
+            background-image: url(code.jpg);
+            font-family: Arial;
+            font-style: italic;
+            color: Red;
+            border: 0;
+            padding: 2px 3px;
+            letter-spacing: 3px;
+            font-weight: bolder;
+        }
+    </style>
+    <meta content="MSHTML 6.00.2900.5848" name="GENERATOR">
+</head>
+<body>
+    <div id="div1">
+        <table id="login" height="150%" cellspacing="0" cellpadding="0" width="800" align="center">
+            <tbody>
+                <tr id="main">
+                    <td>
+                        <table height="100%" cellspacing="0" cellpadding="0" width="100%">
+                            <tbody>
+                                <tr height="246">
+                                    <td colspan="4">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr height="30">
+                                    <td width="380">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr height="40">
+                                    <td rowspan="4">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        用户名：
+                                    </td>
+                                    <td>
+                                        <input id="User_LoginName" class="mini-textbox" name="User_LoginName" onfocus="clearError();">
+                                    </td>
+                                    <td width="120">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr height="40">
+                                    <td>
+                                        密 码：
+                                    </td>
+                                    <td>
+                                        <input id="User_PassWord" type="password" class="mini-password" style="width: 79px;
+                                            vertical-align: middle" name="User_PassWord" onfocus="clearError();">
+                                        <input type="checkbox" id="chkRememberPass" style="vertical-align: middle">
+                                        <span><font style="vertical-align: middle;">记住密码</font></span>
+                                    </td>
+                                    <td width="120">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr height="40">
+                                    <td valign="center" colspan="3">
+                                        <span id="spError" style="color:red;font-size:14px;"></span>
+                                    </td>
+                                </tr>
+                                <tr height="40">
+                                    <td>
+                                        <span id="VNum" style="visibility: hidden">验证码：</span>
+                                    </td>
+                                    <td>
+                                        <input align="left" id="VNumtxt" class="mini-textbox" name="VNum" style="visibility: hidden">
+                                        <input align="right" id="btnLogin" type="submit" value=" 登 录 " name="btnLogin" onclick="onLoginClick()">
+                                    </td>
+                                    <td width="120">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr height="110">
+                                    <td colspan="4">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr id="root" height="104">
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="div2" style="display: none">
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    var VNum;
+    $(function () {
+        var userNameValue = getCookieValue("userName");
+        $("#User_LoginName").val(userNameValue);
+        var userPassValue = getCookieValue("userPass");
+        $("#User_PassWord").val(userPassValue);
+        if ($("#User_PassWord").val() == "") {
+            $("#chkRememberPass").attr("checked", false);
+        } else {
+            $("#chkRememberPass").attr("checked", true);
+        }
+    })
+
+    function clearError() {
+        $("#spError").html("");
+    }
+
+    function onLoginClick() {
+        if ($("#User_LoginName").val() == "") {
+            $("#spError").html('用户名为空');
+            return;
+        }
+        if ($("#User_PassWord").val() == "") {
+            $("#spError").html('密码为空');
+            return;
+        }
+        var objChk = document.getElementById("chkRememberPass");
+        if (objChk.checked) {
+            LoginName = $("#User_LoginName").val();
+            PassWord = $("#User_PassWord").val();
+            addCookie("userName", LoginName, 7, "/");
+            addCookie("userPass", PassWord, 7, "/");
+        } else {
+            LoginName = $("#User_LoginName").val();
+            addCookie("userName", LoginName, 7, "/")
+            deleteCookie("userPass", "/");
+        }
+        var arr = new Array();
+        arr[0] = $("#User_LoginName").val();
+        arr[1] = $("#User_PassWord").val();
+        ReturnMethod("BLL_Login", "Login", arr, "", "LoginSuccess");
+    }
+
+    document.onkeydown = function (event) {
+        e = event ? event : (window.event ? window.event : null);
+        if (e.keyCode == 13) {
+            //执行的方法  
+            onLoginClick();
+        }
+    }
+
+    //生成随机5位验证码
+    //function createVNum() {
+    //    VNum = "";
+    //    var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    //    for (var i = 0; i < 5; i++) {
+    //        var index = Math.floor(Math.random() * 10);
+    //        VNum += random[index];
+    //    }
+    //    return VNum;
+    //}
+
+    //添加设置cookie
+    function addCookie(name, value, days, path) {
+        var name = escape(name);
+        var value = escape(value);
+        var expires = new Date();
+        expires.setTime(expires.getTime() + days * 3600000 * 24);
+        path = path == "" ? "" : ";path=" + path;
+        var _expires = (typeof days) == "string" ? "" : ";expires=" + expires.toUTCString();
+        document.cookie = name + "=" + value + _expires + path;
+    }
+    //获取cookie的值
+    function getCookieValue(name) {
+        var name = escape(name);
+        var allcookies = document.cookie;
+        name += "=";
+        var pos = allcookies.indexOf(name);
+        if (pos != -1) {
+            var start = pos + name.length;
+            var end = allcookies.indexOf(";", start);
+            if (end == -1) end = allcookies.length;
+            var value = allcookies.substring(start, end);
+            return (unescape(value));
+        } else {
+            return "";
+        }
+    }
+    //删除cookie
+    function deleteCookie(name, path) {
+        var name = escape(name);
+        var expires = new Date(0);
+        path = path == "" ? "" : ";path=" + path;
+        document.cookie = name + "=" + ";expires=" + expires.toUTCString() + path;
+    }
+
+
+    var CustomMethod = {
+        LoginSuccess: function (text) {
+            //IP地址验证登录
+            //var ipConfig = ReturnValue("BLL_Login", "GetIpAdress", "", "");
+            if (text == "true") {
+                layer.msg('登录成功', { icon: 1, time: 500 }, function () {
+                    window.location.href = "main.htm";
+                });
+            } else {
+                $("#spError").html(text);
+            }
+        }
+    }
+</script>

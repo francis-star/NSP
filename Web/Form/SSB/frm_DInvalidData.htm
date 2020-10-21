@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>删除无效数据</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+
+    <script src="../../JS/jquery-1.9.0.min.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGridPaging.js"></script>
+
+    <script src="../../JS/artDialog4.1.4/artDialog.source.js?skin=default" type="text/javascript"></script>
+
+    <script src="../../JS/artDialog4.1.4/plugins/iframeTools.source.js" type="text/javascript"></script>
+
+    <script src="../../JS/HCWeb2016.js"></script>
+
+    <script src="../../JS/GetQueryString.js" type="text/javascript"></script>
+
+    <script src="../../JSHC/SSB/DInvalidData.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="toptoolbar">
+    </div>
+    <div style="margin-left:10px;">
+        <span>1、如果您还没有模板，可以通过下面按钮进行模板下载</span><br />
+        <span>2、请将数据通过excel中的“另存为”保存成txt格式进行上传</span><br />
+        <span>
+            <a style="text-align: center; font-size: large; text-decoration: none;" href="../../UpFile/数据筛选模版.xls">
+                <input type="button" value="下载模板" style="font-size: 14px; margin-bottom: 5px; ">
+            </a>
+        </span>
+        <!--<hr style="height: 1px; border: none; border-top: 2px solid #d3d3d3; margin-top: 15px; margin-bottom: 15px; " />-->
+    </div>
+    <table class="bor1 w1 f14 mart5">
+        <tr class="b-l-p">
+            <td class="b-bg w20 t-c">
+                文件上传
+            </td>
+            <td colspan="4">
+                <input type="text" id="CA_SP_FJ1" class="tous-text" style="width:84%" readonly="readonly" />
+                &nbsp
+                <input type="button" onclick="UpFile();" value="上传" />
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

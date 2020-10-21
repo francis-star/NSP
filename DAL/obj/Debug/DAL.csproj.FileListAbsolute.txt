@@ -1,0 +1,13 @@
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\DAL.dll
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\DAL.pdb
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\Common.dll
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\HCWeb2016.dll
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\Model.dll
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\Newtonsoft.Json.Net20.dll
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\Common.pdb
+D:\Project\全国公司支撑系统(PC)\DAL\bin\Debug\Model.pdb
+D:\Project\全国公司支撑系统(PC)\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Project\全国公司支撑系统(PC)\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Project\全国公司支撑系统(PC)\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Project\全国公司支撑系统(PC)\DAL\obj\Debug\DAL.dll
+D:\Project\全国公司支撑系统(PC)\DAL\obj\Debug\DAL.pdb

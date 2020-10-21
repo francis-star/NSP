@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{013BF280-05D1-4385-8CE8-F2E12CCF45DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C8A1425E-7289-4D2C-8A16-36FC00A3F025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{6E1C5B9E-6FCB-4935-8D84-C5B966685DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7925407D-6BD7-425E-AD67-E3B8574B0B60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6B5DC797-9D9B-42C5-9723-5F5EF6F92868}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{013BF280-05D1-4385-8CE8-F2E12CCF45DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013BF280-05D1-4385-8CE8-F2E12CCF45DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013BF280-05D1-4385-8CE8-F2E12CCF45DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013BF280-05D1-4385-8CE8-F2E12CCF45DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A1425E-7289-4D2C-8A16-36FC00A3F025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A1425E-7289-4D2C-8A16-36FC00A3F025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A1425E-7289-4D2C-8A16-36FC00A3F025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A1425E-7289-4D2C-8A16-36FC00A3F025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E1C5B9E-6FCB-4935-8D84-C5B966685DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E1C5B9E-6FCB-4935-8D84-C5B966685DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E1C5B9E-6FCB-4935-8D84-C5B966685DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E1C5B9E-6FCB-4935-8D84-C5B966685DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7925407D-6BD7-425E-AD67-E3B8574B0B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7925407D-6BD7-425E-AD67-E3B8574B0B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7925407D-6BD7-425E-AD67-E3B8574B0B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7925407D-6BD7-425E-AD67-E3B8574B0B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B5DC797-9D9B-42C5-9723-5F5EF6F92868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B5DC797-9D9B-42C5-9723-5F5EF6F92868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B5DC797-9D9B-42C5-9723-5F5EF6F92868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B5DC797-9D9B-42C5-9723-5F5EF6F92868}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E28D0E3F-81C8-4630-8845-70D30D654893}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://devops/jshcsoft
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BLL\\BLL.csproj
+		SccProjectName1 = BLL
+		SccLocalPath1 = BLL
+		SccProjectUniqueName2 = Common\\Common.csproj
+		SccProjectName2 = Common
+		SccLocalPath2 = Common
+		SccProjectUniqueName3 = DAL\\DAL.csproj
+		SccProjectName3 = DAL
+		SccLocalPath3 = DAL
+		SccProjectUniqueName4 = Model\\Model.csproj
+		SccProjectName4 = Model
+		SccLocalPath4 = Model
+		SccProjectUniqueName5 = Web\\Web.csproj
+		SccProjectName5 = Web
+		SccLocalPath5 = Web
+	EndGlobalSection
+EndGlobal
