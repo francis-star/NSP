@@ -9,3 +9,4 @@ E:\testProject\NSP\Common\bin\Debug\Common.pdb
 E:\testProject\NSP\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 E:\testProject\NSP\Common\obj\Debug\Common.dll
 E:\testProject\NSP\Common\obj\Debug\Common.pdb
+E:\testProject\NSP\Common\obj\Debug\Common.csprojAssemblyReference.cache

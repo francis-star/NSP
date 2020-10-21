@@ -87,6 +87,7 @@
     <Compile Include="DAL_UserSetDts.cs" />
     <Compile Include="InMolde\InOriginViewModle.cs" />
     <Compile Include="Models\SSB_OriginalDataDts.cs" />
+    <Compile Include="Models\SSB_OriginalDataValid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DbService.cs" />
   </ItemGroup>

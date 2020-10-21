@@ -11,6 +11,19 @@ namespace DAL.InMolde
 
         public string ODCode { get; set; }
 
+        public string ODD_OD_Code { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ODCodeList { get; set; }
+
+        public string TableName { get; set; }
+
+        /// <summary>
+        /// 是否按条件导出(0：按条件导出；1：复选框导出)
+        /// </summary>
+        public int IsExportByCondition { get; set; }
         /// <summary>
         /// 客户名称
         /// </summary>
@@ -93,12 +106,12 @@ namespace DAL.InMolde
         /// <summary>
         /// 开通时间
         /// </summary>
-        public DateTime? OpenDate { get; set; }
+        public string OpenDate { get; set; }
 
         /// <summary>
         /// 退订时间
         /// </summary>
-        public DateTime? UnsubscribeTime { get; set; }
+        public string UnsubscribeTime { get; set; }
         public int PageIndex { get; set; }
 
         public int PageNum { get; set; }
