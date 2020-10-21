@@ -769,6 +769,7 @@ namespace DAL
                                                            WHERE SA_Code = '{0}')
                                     , OD_ProvinceCode = '{0}'
                                     , OD_CityCode = '{1}'
+                                    ,OD_State = '未筛选'
                                     , OD_CityName = (SELECT SA_Name
                                                      FROM SYS_Area
                                                      WHERE SA_Code = '{1}')
