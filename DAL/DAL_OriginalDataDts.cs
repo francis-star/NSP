@@ -265,6 +265,7 @@ namespace DAL
         public string GetInvalidSSBViewData(InOriginViewModle model)
         {
             var db = DbService.Instance;
+
             int invalidTotalCount = 0;
             var invalidDataList = db.Queryable<SSB_OriginalDataDts>().Where(it =>it.ODD_OD_Code == model.ODCode &&  it.ODD_Type != "1")
                 .WhereIF(!string.IsNullOrEmpty(model.ApprovedUser), it => it.ApprovedUser == model.ApprovedUser)
@@ -300,6 +301,7 @@ namespace DAL
         public string GetValidSSBViewData(InOriginViewModle model)
         {
             var db = DbService.Instance;
+
             int validTotalCount = 0;
             var validDataList = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type == "1")
                                 .ToPageList(model.PageIndex, model.PageNum, ref validTotalCount);

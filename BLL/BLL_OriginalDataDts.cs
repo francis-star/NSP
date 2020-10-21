@@ -154,6 +154,7 @@ namespace BLL
         public string GetInvalidSSBViewData(object obj)
         {
             var arr = obj as InOriginViewModle;
+
             //ArrayList arr = JSON.getPara(obj);
             var result = dAL_OriginalDataDts.GetInvalidSSBViewData(arr);
 
@@ -168,6 +169,7 @@ namespace BLL
         public string GetValidSSBViewData(object obj)
         {
             var arr = obj as InOriginViewModle;
+
             //ArrayList arr = JSON.getPara(obj);
             var result = dAL_OriginalDataDts.GetValidSSBViewData(arr);
 
