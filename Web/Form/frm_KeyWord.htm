@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>关键字查询</title> 
+    <link href="../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" href="../JS/layer/skin/layer.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="../CSS/box.css" />
+    <script src="../JS/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../JS/layer/layer.js"></script>
+    <script src="../JSHC/Pub.js" type="text/javascript"></script>
+    <script src="../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+    <script src="../JS/lib/ligerUI/js/plugins/ligerGridPaging.js"></script>
+    <script src="../JS/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="../JS/lib/ligerUI/js/plugins/ligerTab.js" type="text/javascript"></script>
+    <script src="../JS/lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script src="../JS/HCWeb2016.js"></script>
+    <script src="../JSHC/gridCommon.js"></script>
+    <script src="../JS/GetQueryString.js" type="text/javascript"></script>
+    <script src="../JSHC/KeyWord.js" type="text/javascript"></script>  
+</head>
+<body>
+    <div id="toptoolbar">
+    </div>
+    <div id="SearchDiv" class="SearchDiv" style="margin-left: 5px; margin-top: 5px; width: 98%">
+        <table class="bor1 w1 b-l-p2">
+            <tr class="b-l-p">
+                <td class="b-bg t-c">
+                    地区
+                </td>
+                <td class="w20">
+                    <input type="text" id="Province" style="width: 200px" placeholder="选择省份" />
+                </td>
+
+                <td class="b-bg t-c">
+                    业务名称
+                </td>
+                <td class="w20">
+                    <input type="text" id="PlatForm" />
+                </td>
+                <td class="b-bg t-c">
+                    关键字
+                </td>
+                <td class="w20">
+                    <input type="text" id="KM_Name" class="tous-text" style="width: 130px" />
+                </td>
+                <td class="b-bg t-c">
+                    危险程度
+                </td>
+                <td class="w20">
+                    <input type="text" id="isDanger" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="grid" style="margin-left: 5px; margin-top: 5px;">
+    </div>
+</body>
+</html>
+
+

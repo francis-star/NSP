@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8A1425E-7289-4D2C-8A16-36FC00A3F025}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HCWeb2016, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\chcserver\sharefiles\相关引用bin\HCWeb2016.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net20, Version=4.0.2.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\chcserver\sharefiles\相关引用bin\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=5.0.0.19, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlSugar.5.0.0.19\lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL_AllQuery.cs" />
+    <Compile Include="DAL_BillHistory.cs" />
+    <Compile Include="DAL_BlackList.cs" />
+    <Compile Include="DAL_BlackListDts.cs" />
+    <Compile Include="DAL_CallCenter.cs" />
+    <Compile Include="DAL_CallCenterDts.cs" />
+    <Compile Include="DAL_CodeSet.cs" />
+    <Compile Include="DAL_CodeType.cs" />
+    <Compile Include="DAL_CustomerReturns.cs" />
+    <Compile Include="DAL_CustomerReturnsDts.cs" />
+    <Compile Include="DAL_CustomerService.cs" />
+    <Compile Include="DAL_KeyWord.cs" />
+    <Compile Include="DAL_KeyWordDts.cs" />
+    <Compile Include="DAL_LevelSet.cs" />
+    <Compile Include="DAL_LevelSetDts.cs" />
+    <Compile Include="DAL_Login.cs" />
+    <Compile Include="DAL_Main.cs" />
+    <Compile Include="DAL_Mediation.cs" />
+    <Compile Include="DAL_NoManager.cs" />
+    <Compile Include="DAL_OriginalData.cs" />
+    <Compile Include="DAL_OriginalDataDts.cs" />
+    <Compile Include="DAL_Pub.cs" />
+    <Compile Include="DAL_PublicInfo.cs" />
+    <Compile Include="DAL_PublicInfoDts.cs" />
+    <Compile Include="DAL_SqlBase.cs" />
+    <Compile Include="DAL_UpdatePass.cs" />
+    <Compile Include="DAL_UserSet.cs" />
+    <Compile Include="DAL_UserSetDts.cs" />
+    <Compile Include="InMolde\InOriginViewModle.cs" />
+    <Compile Include="Models\SSB_OriginalDataDts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DbService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6b5dc797-9d9b-42c5-9723-5f5ef6f92868}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{6e1c5b9e-6fcb-4935-8d84-c5b966685dd5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

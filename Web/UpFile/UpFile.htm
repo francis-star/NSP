@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Uploadify</title>
+    <link href="../JS/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../js/uploadify/jquery-1.4.2.min.js"></script>
+
+    <script type="text/javascript" src="../js/uploadify/swfobject.js"></script>
+
+    <script type="text/javascript" src="../js/uploadify/upload.js"></script>
+
+    <script src='../JS/artDialog4.1.4/artDialog.source.js?skin=default' type='text/javascript'></script>
+
+    <script src='../JS/artDialog4.1.4/plugins/iframeTools.source.js' type='text/javascript'></script>
+
+    <link href="../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+
+    <script src="../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+
+    <script src="../JS/lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+
+    <script src="../JS/lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var FileType = art.dialog.data('FileType');
+        var Filedata = art.dialog.data('Filedata');
+
+        var FileName = "", orginName = "";
+        $(document).ready(function () {
+            $("#uploadify").uploadify({
+                'uploader': '../js/uploadify/uploadify.swf',
+                'script': '../js/uploadify/UploadHandler.ashx',
+                //'checkScript': 'CheckFile.ashx',
+                'buttonImg': '../js/uploadify/selectfiles.png',
+                'cancelImg': '../js/uploadify/cancel.png',
+                'folder': 'Files',
+                'width': 177,
+                'height': 30,
+                'queueID': 'fileQueue',
+                'sizeLimit': Filedata * 1000 * 1000, //100M
+                'auto': false,
+                'multi': false,
+                'fileDesc': 'All Files (' + FileType + ")", //允许上传的文件类型的描述，在弹出的文件选择框里会显示
+                'fileExt': FileType, //允许上传的文件类型，限制弹出文件选择框里能选择的文件
+
+                'onError': function (a, b, c, d) {
+                    if (d.status == 404)
+                        alert('找不到文件');
+                    else if (d.type === "HTTP")
+                        alert('error ' + d.type + ": " + d.status);
+                    else if (d.type === "File Size")
+                        alert('上传的文件合计大小超过' + Filedata + "M");
+                    else
+                        alert('error ' + d.type + ": " + d.info);
+                },
+
+                'onComplete': function (event, queueID, fileObj, response, data) {
+                    FileName = response;
+                    orginName = fileObj.name;
+                    $.ligerDialog.confirm('是否确认上传', function (retText) { if (retText == true) onReFileName(); else art.dialog.close(); });
+                }
+            });
+        });
+
+        function onReFileName() {
+            var path = art.dialog.data('Path');
+            var origin = artDialog.open.origin;
+            origin.document.getElementById(path).value = FileName;
+            $(origin.document.getElementById(path)).next().val("删除");
+            if (origin.document.getElementById("hdFileName") != null)
+                origin.document.getElementById("hdFileName").value = orginName;
+            art.dialog.close();
+        }
+    </script>
+
+</head>
+<body>
+    <div id="fileQueue">
+    </div>
+    <div>
+        <div>
+            <input type="file" name="uploadify" id="uploadify" />
+            <div>
+                <div>
+                    <input id="upload" type="button" value="上传" onclick="javascript:$('#uploadify').uploadifyUpload()" />
+                    <input id="Cancel" type="button" value="取消上传" onclick="javascript:$('#uploadify').uploadifyClearQueue()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

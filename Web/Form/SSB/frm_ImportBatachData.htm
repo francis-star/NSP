@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>上传文件</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+
+    <script src="../../JS/jquery-1.9.0.min.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGridPaging.js"></script>
+
+    <script src="../../JS/artDialog4.1.4/artDialog.source.js?skin=default" type="text/javascript"></script>
+
+    <script src="../../JS/artDialog4.1.4/plugins/iframeTools.source.js" type="text/javascript"></script>
+
+    <script src="../../JS/HCWeb2016.js"></script>
+    <script src="../../JSHC/Pub.js" type="text/javascript"></script>
+    <script src="../../JS/GetQueryString.js" type="text/javascript"></script>
+    <script src="../../JSHC/SSB/ImportBatchData.js"></script>
+</head>
+<body>
+    <div id="toptoolbar">
+    </div>
+    <div style="margin-left:10px;">
+        <input type="hidden" id="hdFileName" />
+        <span style="font-size:16px;">数据准备：</span>
+        <span><br /><br /></span>
+        <span style="font-size:16px; padding-top:10px;">请直接下载模版，相关规范要求可以查看模版的首行“导入规则说明”</span><br />
+        <span><br /></span><span>
+            <a style="text-align: center; font-size: large; text-decoration: none;" href="../../UpFile/批量计费_导入模版.xls">
+                <input type="button" value="下载模板" style="font-size: 14px; margin-bottom: 5px; ">
+            </a>
+        </span>
+        <hr />
+    </div>  
+    <table class="bor1 w1 f14 mart5">
+        <tr class="b-l-p">
+            <td class="b-bg w20 t-c">
+                数据上传
+            </td>
+            <td colspan="4">
+                <input type="text" class="in-text" id="tbPC_Name" value="" readonly="readonly" style="width:84%" /><input id="Button1" type="button" value="上传" onclick="UpFile()" />
+            </td>
+        </tr> 
+        <tr class="b-l-p">
+            <td class="b-bg w20 t-c">
+                备注信息
+            </td>
+            <td colspan="4">
+                <textarea id="txtRemark" placeholder="请输入备注信息，200字内" class="tous-text" maxlength="200" style="width: 98%; height: 100px; overflow: auto;">&nbsp</textarea>
+            </td>
+        </tr>
+    </table>
+    <!--<div style="margin-left:10px;">
+        <span style="text-align:left;font-size:16px;">上传文件：</span><br />
+        <input type="text" placeholder="请按模版要求上传数据，2M以内" id="tbPC_Name" value="" readonly="readonly" style="width:70%;padding-top:10px; padding-right:10px;" />
+        <input id="Button1" type="button" value="上传文件" onclick="UpFile()" style="font-size:16px;width:80px;vertical-align: super;" />
+        <span style="height:5px;"></span>
+        <div style="width: 345px; font-size:14px; height: 100px; overflow: auto;" placeholder="上传完毕后，此处可以查看数据校验后的结果，校验成功后方可完成此次批量登记操作。">
+
+        </div>
+        <span style="height:5px;"></span>
+        <span style="text-align:left;padding-top:10px;font-size:16px;">备注信息：</span><br />
+        <textarea id="txtRemark" style="width: 345px; font-size:14px;height: 100px; overflow: auto;" maxlength="200" placeholder="请输入备注信息，200字内"></textarea>
+    </div>-->
+</body>
+</html>
+

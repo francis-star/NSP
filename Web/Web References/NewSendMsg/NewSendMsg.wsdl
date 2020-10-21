@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://192.168.1.125:8002/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://192.168.1.125:8002/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://192.168.1.125:8002/">
+      <s:element name="SendMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsgResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_315">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_315Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_315Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XFGWNormal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XFGWNormalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_XFGWNormalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_ET315WNormal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_ET315WNormalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_ET315WNormalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XFBNormal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XFBNormalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_XFBNormalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_CXTSNormal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_CXTSNormalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_CXTSNormalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_MQYNormal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_MQYNormalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_MQYNormalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_xianglehui">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_xianglehuiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_xianglehuiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_Wisdom315">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_Wisdom315Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_Wisdom315Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_Wisdom315Normal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_Wisdom315NormalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_Wisdom315NormalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_Wisdom315NormalAsmx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_Wisdom315NormalAsmxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_Wisdom315NormalAsmxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XLH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XLHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_XLHResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XLHNormal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tele" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMsg_Budiot_XLHNormalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMsg_Budiot_XLHNormalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg" />
+  </wsdl:message>
+  <wsdl:message name="SendMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_315SoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_315" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_315SoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_315Response" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFGWNormalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XFGWNormal" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFGWNormalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XFGWNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_ET315WNormalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_ET315WNormal" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_ET315WNormalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_ET315WNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFBNormalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XFBNormal" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFBNormalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XFBNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_CXTSNormalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_CXTSNormal" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_CXTSNormalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_CXTSNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_MQYNormalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_MQYNormal" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_MQYNormalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_MQYNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_xianglehuiSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_xianglehui" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_xianglehuiSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_xianglehuiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315SoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_Wisdom315" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315SoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_Wisdom315Response" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_Wisdom315Normal" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_Wisdom315NormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalAsmxSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_Wisdom315NormalAsmx" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalAsmxSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_Wisdom315NormalAsmxResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XLH" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XLHResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHNormalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XLHNormal" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHNormalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMsg_Budiot_XLHNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMsgHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsgHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_315HttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_315HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFGWNormalHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFGWNormalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_ET315WNormalHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_ET315WNormalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFBNormalHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFBNormalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_CXTSNormalHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_CXTSNormalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_MQYNormalHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_MQYNormalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_xianglehuiHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_xianglehuiHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315HttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalAsmxHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalAsmxHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHNormalHttpGetIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHNormalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsgHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsgHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_315HttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_315HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFGWNormalHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFGWNormalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_ET315WNormalHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_ET315WNormalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFBNormalHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XFBNormalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_CXTSNormalHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_CXTSNormalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_MQYNormalHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_MQYNormalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_xianglehuiHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_xianglehuiHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315HttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalAsmxHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_Wisdom315NormalAsmxHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHNormalHttpPostIn">
+    <wsdl:part name="tele" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMsg_Budiot_XLHNormalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="NewSendMsgSoap">
+    <wsdl:operation name="SendMsg">
+      <wsdl:input message="tns:SendMsgSoapIn" />
+      <wsdl:output message="tns:SendMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_315">
+      <wsdl:input message="tns:SendMsg_315SoapIn" />
+      <wsdl:output message="tns:SendMsg_315SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFGWNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XFGWNormalSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XFGWNormalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_ET315WNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_ET315WNormalSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_ET315WNormalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFBNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XFBNormalSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XFBNormalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_CXTSNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_CXTSNormalSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_CXTSNormalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_MQYNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_MQYNormalSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_MQYNormalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_xianglehui">
+      <wsdl:input message="tns:SendMsg_xianglehuiSoapIn" />
+      <wsdl:output message="tns:SendMsg_xianglehuiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315SoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315Normal">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315NormalSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315NormalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315NormalAsmx">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315NormalAsmxSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315NormalAsmxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLH">
+      <wsdl:input message="tns:SendMsg_Budiot_XLHSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XLHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLHNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XLHNormalSoapIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XLHNormalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NewSendMsgHttpGet">
+    <wsdl:operation name="SendMsg">
+      <wsdl:input message="tns:SendMsgHttpGetIn" />
+      <wsdl:output message="tns:SendMsgHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_315">
+      <wsdl:input message="tns:SendMsg_315HttpGetIn" />
+      <wsdl:output message="tns:SendMsg_315HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFGWNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XFGWNormalHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XFGWNormalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_ET315WNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_ET315WNormalHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_ET315WNormalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFBNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XFBNormalHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XFBNormalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_CXTSNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_CXTSNormalHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_CXTSNormalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_MQYNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_MQYNormalHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_MQYNormalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_xianglehui">
+      <wsdl:input message="tns:SendMsg_xianglehuiHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_xianglehuiHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315HttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315Normal">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315NormalHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315NormalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315NormalAsmx">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315NormalAsmxHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315NormalAsmxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLH">
+      <wsdl:input message="tns:SendMsg_Budiot_XLHHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XLHHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLHNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XLHNormalHttpGetIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XLHNormalHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NewSendMsgHttpPost">
+    <wsdl:operation name="SendMsg">
+      <wsdl:input message="tns:SendMsgHttpPostIn" />
+      <wsdl:output message="tns:SendMsgHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_315">
+      <wsdl:input message="tns:SendMsg_315HttpPostIn" />
+      <wsdl:output message="tns:SendMsg_315HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFGWNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XFGWNormalHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XFGWNormalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_ET315WNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_ET315WNormalHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_ET315WNormalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFBNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XFBNormalHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XFBNormalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_CXTSNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_CXTSNormalHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_CXTSNormalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_MQYNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_MQYNormalHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_MQYNormalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_xianglehui">
+      <wsdl:input message="tns:SendMsg_xianglehuiHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_xianglehuiHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315HttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315Normal">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315NormalHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315NormalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315NormalAsmx">
+      <wsdl:input message="tns:SendMsg_Budiot_Wisdom315NormalAsmxHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_Wisdom315NormalAsmxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLH">
+      <wsdl:input message="tns:SendMsg_Budiot_XLHHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XLHHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLHNormal">
+      <wsdl:input message="tns:SendMsg_Budiot_XLHNormalHttpPostIn" />
+      <wsdl:output message="tns:SendMsg_Budiot_XLHNormalHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NewSendMsgSoap" type="tns:NewSendMsgSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMsg">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_315">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_315" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFGWNormal">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XFGWNormal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_ET315WNormal">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_ET315WNormal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFBNormal">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XFBNormal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_CXTSNormal">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_CXTSNormal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_MQYNormal">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_MQYNormal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_xianglehui">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_xianglehui" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_Wisdom315" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315Normal">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_Wisdom315Normal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315NormalAsmx">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_Wisdom315NormalAsmx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLH">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XLH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLHNormal">
+      <soap:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XLHNormal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NewSendMsgSoap12" type="tns:NewSendMsgSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMsg">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_315">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_315" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFGWNormal">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XFGWNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_ET315WNormal">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_ET315WNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFBNormal">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XFBNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_CXTSNormal">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_CXTSNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_MQYNormal">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_MQYNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_xianglehui">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_xianglehui" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_Wisdom315" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315Normal">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_Wisdom315Normal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315NormalAsmx">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_Wisdom315NormalAsmx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLH">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XLH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLHNormal">
+      <soap12:operation soapAction="http://192.168.1.125:8002/SendMsg_Budiot_XLHNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NewSendMsgHttpGet" type="tns:NewSendMsgHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendMsg">
+      <http:operation location="/SendMsg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_315">
+      <http:operation location="/SendMsg_315" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFGWNormal">
+      <http:operation location="/SendMsg_Budiot_XFGWNormal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_ET315WNormal">
+      <http:operation location="/SendMsg_Budiot_ET315WNormal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFBNormal">
+      <http:operation location="/SendMsg_Budiot_XFBNormal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_CXTSNormal">
+      <http:operation location="/SendMsg_Budiot_CXTSNormal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_MQYNormal">
+      <http:operation location="/SendMsg_Budiot_MQYNormal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_xianglehui">
+      <http:operation location="/SendMsg_xianglehui" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315">
+      <http:operation location="/SendMsg_Budiot_Wisdom315" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315Normal">
+      <http:operation location="/SendMsg_Budiot_Wisdom315Normal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315NormalAsmx">
+      <http:operation location="/SendMsg_Budiot_Wisdom315NormalAsmx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLH">
+      <http:operation location="/SendMsg_Budiot_XLH" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLHNormal">
+      <http:operation location="/SendMsg_Budiot_XLHNormal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NewSendMsgHttpPost" type="tns:NewSendMsgHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendMsg">
+      <http:operation location="/SendMsg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_315">
+      <http:operation location="/SendMsg_315" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFGWNormal">
+      <http:operation location="/SendMsg_Budiot_XFGWNormal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_ET315WNormal">
+      <http:operation location="/SendMsg_Budiot_ET315WNormal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XFBNormal">
+      <http:operation location="/SendMsg_Budiot_XFBNormal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_CXTSNormal">
+      <http:operation location="/SendMsg_Budiot_CXTSNormal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_MQYNormal">
+      <http:operation location="/SendMsg_Budiot_MQYNormal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_xianglehui">
+      <http:operation location="/SendMsg_xianglehui" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315">
+      <http:operation location="/SendMsg_Budiot_Wisdom315" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315Normal">
+      <http:operation location="/SendMsg_Budiot_Wisdom315Normal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_Wisdom315NormalAsmx">
+      <http:operation location="/SendMsg_Budiot_Wisdom315NormalAsmx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLH">
+      <http:operation location="/SendMsg_Budiot_XLH" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsg_Budiot_XLHNormal">
+      <http:operation location="/SendMsg_Budiot_XLHNormal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NewSendMsg">
+    <wsdl:port name="NewSendMsgSoap" binding="tns:NewSendMsgSoap">
+      <soap:address location="https://webservice.jshcsoft.com/SSMSAPI/NewSendMsg.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NewSendMsgSoap12" binding="tns:NewSendMsgSoap12">
+      <soap12:address location="https://webservice.jshcsoft.com/SSMSAPI/NewSendMsg.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NewSendMsgHttpGet" binding="tns:NewSendMsgHttpGet">
+      <http:address location="https://webservice.jshcsoft.com/SSMSAPI/NewSendMsg.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NewSendMsgHttpPost" binding="tns:NewSendMsgHttpPost">
+      <http:address location="https://webservice.jshcsoft.com/SSMSAPI/NewSendMsg.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="upfilebyte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="upfilebyteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upfilebyteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="upfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buffer" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="upfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upfileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="upfilebyteSoapIn">
+    <wsdl:part name="parameters" element="tns:upfilebyte" />
+  </wsdl:message>
+  <wsdl:message name="upfilebyteSoapOut">
+    <wsdl:part name="parameters" element="tns:upfilebyteResponse" />
+  </wsdl:message>
+  <wsdl:message name="upfileSoapIn">
+    <wsdl:part name="parameters" element="tns:upfile" />
+  </wsdl:message>
+  <wsdl:message name="upfileSoapOut">
+    <wsdl:part name="parameters" element="tns:upfileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UpFileWebSoap">
+    <wsdl:operation name="upfilebyte">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">文件上传
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;FileBase：文件Base64加密字符串&lt;br/&gt;ext：文件扩展名
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:upfilebyteSoapIn" />
+      <wsdl:output message="tns:upfilebyteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="upfile">
+      <wsdl:input message="tns:upfileSoapIn" />
+      <wsdl:output message="tns:upfileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UpFileWebSoap" type="tns:UpFileWebSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="upfilebyte">
+      <soap:operation soapAction="http://tempuri.org/upfilebyte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="upfile">
+      <soap:operation soapAction="http://tempuri.org/upfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UpFileWebSoap12" type="tns:UpFileWebSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="upfilebyte">
+      <soap12:operation soapAction="http://tempuri.org/upfilebyte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="upfile">
+      <soap12:operation soapAction="http://tempuri.org/upfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UpFileWeb">
+    <wsdl:port name="UpFileWebSoap" binding="tns:UpFileWebSoap">
+      <soap:address location="http://support.jshcsoft.com/HcUpFile/upfileweb.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UpFileWebSoap12" binding="tns:UpFileWebSoap12">
+      <soap12:address location="http://support.jshcsoft.com/HcUpFile/upfileweb.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

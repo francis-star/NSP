@@ -1,0 +1,3 @@
+D:\Project\全国公司支撑系统(PC)\obj\Debug\netcoreapp2.0\全国公司支撑系统(PC).csproj.CoreCompileInputs.cache
+D:\Project\全国公司支撑系统(PC)\obj\Debug\netcoreapp2.0\全国公司支撑系统(PC).AssemblyInfoInputs.cache
+D:\Project\全国公司支撑系统(PC)\obj\Debug\netcoreapp2.0\全国公司支撑系统(PC).AssemblyInfo.cs

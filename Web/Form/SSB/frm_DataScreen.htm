@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>筛选</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+    <script src="../../JS/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../JS/HCWeb2016.js"></script>
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGridPaging.js"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerMenu.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerMenuBar.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerTree.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerTab.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+    <script src="../../JSHC/MQY/gridCommon.js"></script>
+    <script src="../../JS/GetQueryString.js" type="text/javascript"></script>
+    <script src="../../JSHC/SSB/DataScreen.js" type="text/javascript"></script>
+    <link type="text/css" href="../../JS/layer/skin/layer.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../JS/layer/layer.js"></script>
+    <style type="text/css">
+        #menu1, .l-menu-shadow {
+            top: 30px;
+            left: 50px;
+        }
+
+        #menu1 {
+            width: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        var data = [];
+        var tree;
+        function onClick(note) {
+            PageIndex = 1;
+            if (note.data.id != parseInt($("#hdType").val()))//&& note.data.id < 20
+            {
+                $("#spCount").html('');
+                checkedCustomer = [];
+            }
+            $("#hdType").val(note.data.id);
+            Search();
+            switchFun(note.data.id)
+            if (note.data.id == 11) {
+                $("#dvYear").show();
+                $("#spTd").hide();
+                var arr = new Array();
+                arr[0] = StuffCode;
+                var yearData = eval("(" + ReturnValue("BLL_OriginalDataDts", "GetNoValidYearData", arr, Address) + ")");
+                var yearCombox = $("#txtYear").ligerComboBox({
+                    width: 160,
+                    selectBoxWidth: 160,
+                    data: yearData,
+                    initValue: "全部",
+                    textField: "year",
+                    valueField: "year",
+                    isMultiSelect: false,
+                    allowInput: "false",
+                    onSelected: changeYear
+                });
+                yearCombox.selectValue("全部");
+            }
+            else if (note.data.id == 10) {
+                $("#dvYear").show();
+                $("#spTd").show();
+                var arr = new Array();
+                arr[0] = StuffCode;
+                var yearData = eval("(" + ReturnValue("BLL_OriginalDataDts", "GetOtherTDYearData", arr, Address) + ")");
+                var yearCombox = $("#txtYear").ligerComboBox({
+                    width: 160,
+                    selectBoxWidth: 160,
+                    data: yearData,
+                    initValue: "全部",
+                    textField: "year",
+                    valueField: "year",
+                    isMultiSelect: false,
+                    allowInput: "false",
+                    onSelected: changeYear
+                });
+                yearCombox.selectValue("全部");
+                var yearTDData = eval("(" + ReturnValue("BLL_OriginalDataDts", "GetOtherTDSJYearData", arr, Address) + ")");
+                var yearTdCombox = $("#txtTDYear").ligerComboBox({
+                    width: 160,
+                    selectBoxWidth: 160,
+                    data: yearTDData,
+                    initValue: "全部",
+                    textField: "year",
+                    valueField: "year",
+                    isMultiSelect: false,
+                    allowInput: "false",
+                    onSelected: changeTDYear
+                });
+                yearTdCombox.selectValue("全部");
+            }
+            else {
+                $("#hdYear").val('');
+                $("#dvYear").hide();
+            }
+        }
+
+        function switchFun(id) {
+            console.log(id)
+            switch (id) {
+                case 1:
+                    reSet();
+                    $("#sltMove option[value='1']").remove();
+                    $("#dvTypeTotal").html("有效数据：" + MaxCount);
+                    break;
+                default:
+                    reSet();
+                    $("#sltMove option[value='2']").remove();
+                    $("#dvTypeTotal").html("无效数据：" + MaxCount);
+                    break;
+            }
+        }
+
+    </script>
+    <style>
+        #btn2, #btn3 {
+            display: inline-block;
+        }
+
+        #dvTypeTotal, #dvTotal {
+            line-height: 32px;
+        }
+
+        .l-box.l-expandable-open {
+            pointer-events: none
+        }
+
+            .l-box.l-expandable-open:parent {
+                pointer-events: none
+            }
+
+            .l-box.l-expandable-open + span {
+                pointer-events: none
+            }
+
+        .l-tree .l-selected .l-tree-icon-folder-open + span {
+            background: none;
+            border: none;
+            padding: 0;
+            height: inherit;
+            line-height: inherit;
+            text-decoration: none
+        }
+
+        .l-text-wrapper {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 11px
+        }
+        /*.l-tree .l-selected span {
+            background: none;
+            border: none;
+            padding: 0;
+            height: inherit;
+            line-height: inherit;
+            text-decoration: none
+        }*/
+
+        .l-tree .l-children .l-selected span {
+            background: #D9E8FB !important;
+            border: 1px solid #B5CBEC !important;
+            padding: 0px 2px !important;
+            height: 20px !important;
+            line-height: 20px !important;
+        }
+
+        .l-tree .l-over span {
+            text-decoration: none
+        }
+
+        /*.menuBar {
+            display: inline-block;
+            width: 50px;
+            height: 23px;
+            line-height: 23px;
+            vertical-align: top;
+            margin-left: 20px;
+            border-radius: 6px;
+            position: relative;
+            background-color: #F5F5F5;
+            padding: 0 6px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .menu-ul {
+            width: 150px;
+            background-color: #fff;
+            position: absolute;
+            top: 22px;
+            left: 0;
+            padding: 0 10px;
+            display: none;
+            z-index: 99999;
+        }
+        .menu-ul li{
+            line-height:26px;
+        }
+        .menu-ul li:hover {
+            background-color: #e2ebfe;
+            border-radius: 4px;
+        }*/
+        .l-text-field {
+            left:1px
+        }
+ 
+    </style>
+</head>
+<body style="margin:10px">
+    <input type="hidden" id="hdType" value="1" /><input type="hidden" id="hdYear" /><input type="hidden" id="hdTDYear" />
+    <table style="width:98%;margin-top:10px">
+        <tr>
+            <td style="width:30%;vertical-align: top; border: 1px solid #ccc;">
+                <div id="toptoolbar">
+
+                </div>
+                <div id="dvTotal" style="height: 32px;border: 1px solid #D3d3d3;background: #F7F7F7; padding-left:30px;">
+
+                </div>
+                <div style="width:95%;  margin:10px; float:left;  overflow:auto;  ">
+                    <ul id="tree1"></ul>
+                </div>
+            </td>
+            <td style="width:60%;">
+                <div id="toptoolbar2" style="margin-left: 5px;height: 35px;">
+                    <div id="btn2"></div>
+                    <div id="btn3"></div>
+                    <div style="display: none;vertical-align: super;margin-left: 10px;" id="dvMove">
+                        <label style="display: inline-block;vertical-align: super;">属性：</label>
+                        <select style="display: inline-block;vertical-align: super;" id="attributes" onchange="movevip();">
+                            <option value="0" selected="selected">请选择</option>
+                            <option value="1">已是会员</option>
+                            <option value="2">退订用户</option>
+                            <option value="3">退费用户</option>
+                            <option value="4">重复数据</option>
+                            <option value="5">黑名单</option>
+                            <option value="6">联系号码</option>
+                            <option value="7">投诉号码</option>
+                            <option value="8">关键字（低危）</option>
+                            <option value="9">关键字（高危）</option>
+                        </select>
+                        <label id="lblSeleted" style="display: inline-block;vertical-align: super;margin-left: 10px; display:none;">
+                            已选择<span style="color:red" id="spCount"></span>条
+                        </label>
+                    </div>
+                    <div style="display: none;vertical-align: super;margin-left: 10px;" id="avMove">
+                        <div style="display: none;vertical-align: super;margin-left: 10px;" id="ywSelect">
+                            <label style="display: inline-block;vertical-align: super;">业务名称：</label>
+                            <select style="display: inline-block;vertical-align: super;" id="ywname" onchange="moveyw();">
+                                <option value="0" selected="selected">全部</option>
+                                <option value="1">实时保</option>
+                                <option value="2">维权通</option>
+                                <option value="3">诚信通</option>
+                                <option value="4">民企云</option>
+                            </select>
+                        </div>
+                        <div style="display: none;vertical-align: super;margin-left: 10px;" id="cfSelect">
+                            <label style="display: inline-block;vertical-align: super;">重复类型：</label>
+                            <select style="display: inline-block;vertical-align: super;" id="cftype" onchange="movecf();">
+                                <option value="0" selected="selected">全部</option>
+                                <option value="1">名称重复</option>
+                                <option value="2">计费号码重复</option>
+                            </select>
+                        </div>
+                        <div style="display: none;vertical-align: super;margin-left: 10px;" id="jfSelect">
+                            <label style="display: inline-block;vertical-align: super;">是否计费：</label>
+                            <select style="display: inline-block;vertical-align: super;" id="isjf" onchange="movejf();">
+                                <option value="0" selected="selected">全部</option>
+                                <option value="1">是</option>
+                                <option value="2">否</option>
+                            </select>
+                        </div>
+                        <div style="display: none;vertical-align: super;margin-left: 10px;" id="tsSelect">
+                            <label style="display: inline-block;vertical-align: super;">投诉性质：</label>
+                            <select style="display: inline-block;vertical-align: super;" id="tsxz" onchange="movets();">
+                                <option value="0" selected="selected">全部</option>
+                                <option value="1">一般投诉</option>
+                                <option value="2">重大投诉</option>
+                                <option value="3">恶劣投诉</option>
+                            </select>
+                        </div>
+                        <div style="display: none;vertical-align: super;margin-left: 10px;" id="tslySelect">
+                            <label style="display: inline-block;vertical-align: super;">投诉来源：</label>
+                            <select style="display: inline-block;vertical-align: super;" id="tsly" onchange="movetsly();">
+                                <option value="0" selected="selected">全部</option>
+                                <option value="1">省号百</option>
+                                <option value="2">省投</option>
+                                <option value="3">区域中心</option>
+                                <option value="4">南京号百</option>
+                                <option value="5">用户</option>
+                                <option value="6">客户经理</option>
+                                <option value="7">地市号百</option>
+                                <option value="8">地市营业厅</option>
+                                <option value="9">公司</option>
+                                <option value="10">智恒</option>
+                            </select>
+                        </div>
+                        <div style="display: none;vertical-align: super;margin-left: 10px;line-height:30px" id="kt">
+                            <label style="display: inline-block;vertical-align: super;">开通时间：</label>
+                            <input id="ktdate" type="text" style="width: 100px" />
+                        </div>
+                        <div style="display: none;vertical-align: super;margin-left: 10px;" id="td">
+                            <label style="display: inline-block;vertical-align: super;">退订时间：</label>
+                            <input id="tddate" type="text" style="width: 100px" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dvTypeTotal" style="height: 32px;border: 1px solid #D3d3d3;background: #F7F7F7; padding-left:30px">
+
+                </div>
+                <div id="dvYear" style="margin:10px; display:none">
+                    <span>新增年份：<input type="text" id="txtYear" /></span>
+                    <span style="padding-left:10px;" id="spTd">退订年份：<input type="text" id="txtTDYear" /></span>
+                </div>
+                <div id="ValidData" style="margin-left: 5px; margin-top: 5px;">
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

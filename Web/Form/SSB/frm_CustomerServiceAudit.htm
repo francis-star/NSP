@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>(实)审核管理中心_审核</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+    <link type="text/css" href="../../JS/layer/skin/layer.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../JS/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../JS/layer/layer.js"></script>
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGridPaging.js"></script>
+    <script src="../../JS/HCWeb2016.js"></script>
+    <script type="text/javascript" src="../../JSHC/Pub.js"></script>
+    <script src="../../JSHC/SSB/CustomerServiceAudit.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="toptoolbar"></div>
+    <div id="bodyInfo" style="max-height: 235px; margin: 5px; border: 1px solid #c9c9c9; ">
+        <div class="SearchDiv" style="margin-left: 5px; margin-top: 5px; width: 99%" id="Receipt">
+            <table class="bor1 w1 b-l-p2">
+                <tr>
+                    <td class="b-bg w10 t-c" colspan="6" style="text-align: left;">客户单状态:<span id="spanState">待审</span></td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-c">
+                        客户名称
+                    </td>
+                    <td class="w20">
+                        <span id="CustOldName"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">
+                        现客户名称
+                    </td>
+                    <td class="w20">
+                        <span id="CustName"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">
+                        客户关键字
+                    </td>
+                    <td class="w20">
+                        <span id="CustNameKey"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-c">
+                        座机号码
+                    </td>
+                    <td class="w20">
+                        <span id="CustPhone"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">
+                        联系人
+                    </td>
+                    <td class="w20">
+                        <span id="CustLinkman"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">
+                        联系电话
+                    </td>
+                    <td class="w20">
+                        <span id="CustLinkPhone"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-c">
+                        地址
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="CustAddress"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-c">
+                        是否计费
+                    </td>
+                    <td class="w20">
+                        <span id="CustIsBill"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">
+                        计费金额
+                    </td>
+                    <td class="w20">
+                        <span id="CustBillMoney"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">
+                        计费号码
+                    </td>
+                    <td class="w20">
+                        <span id="CustBillNumber"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-c">
+                        计费号码归属地
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="CustjfAddress"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-c">
+                        客户性质
+                    </td>
+                    <td class="w20">
+                        <span id="CustNature"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">
+                        录音编码
+                    </td>
+                    <td class="w20">
+                        <span id="CustKFVoice"></span>
+                    </td>
+                    <td class="b-bg w10 t-c">数据来源</td>
+                    <td class="w20">
+                        <span id="CustSource"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-c">
+                        备注
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="CustWHRemark"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="xsDiv" class="SearchDiv b-bg w10 t-c" style="width: 99%; margin-left: 5px; margin-top: 5px;">
+            <table class="bor1 w1 b-l-p2" style=" margin-bottom: -8px; border-bottom: 0px; ">
+                <tr>
+                    <td id="tdXS" class="b-bg w10 t-c" colspan="6">
+                        <span id="spanCount" style="float:left;">相似客户</span>
+                        <span style="float:right;"><img src="../../Images/down.png" style="height:10px;" onclick="showXS(this)" /></span>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="grid" style="margin-left: 5px; margin-top:7px;">
+        </div>
+    </div>
+    <div id="message" style="margin-left: 5px; margin-top: 5px; width: 99%; border: 1px solid #c9c9c9; ">
+        <table style="width:99%">
+            <tr style="line-height: 40px;">
+                <td>
+                    <label>&nbsp;&nbsp;&nbsp;<input name="radAudit" checked="checked" value="0" type="radio" onclick="onChange(this)" /><span>审核通过</span></label>
+                    <label>
+                        &nbsp;&nbsp;&nbsp;<input name="radAudit" type="radio" value="1" onclick="onChange(this)" /><span>退回</span>
+                    </label>
+                </td>
+            </tr>
+            <tr style="line-height: 20px;" id="trChckMesge">
+                <td>
+                    <label>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="chk1" />短信内容(勾选后自动发送短信)</label>
+                    <label>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="chk2" />显示</label>
+                </td>
+            </tr>
+            <tr id="trMessage" style="line-height: 20px;">
+                <td class="textarea1" style="border:0px;">
+                    <textarea id="txtMessage" style="width: 99%; height: 62px; margin-left: 6px;"></textarea>
+                </td>
+            </tr>
+            <tr style="display:none" id="trRetMesge">
+                <td class="textarea1" style="border:0px;">
+                    <textarea id="txtRetMsg" style="width: 99%; height: 62px; margin-left: 6px; " rows="5" placeholder="请输入退回原因" maxlength="500"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

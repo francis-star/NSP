@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>(维)客服管理中心(修改)</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+    <link type="text/css" href="../../JS/layer/skin/layer.css" rel="stylesheet" />
+    <script src="../../JS/jquery-1.9.0.min.js"></script>
+
+    <script type="text/javascript" src="../../JS/layer/layer.js"></script>
+
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+
+    <script src="../../JS/HCWeb2016.js"></script>
+
+    <script src="../../JSHC/WQT/CustomerReturnsDts.js" type="text/javascript"></script>
+
+
+    <style>
+        .jsxx {
+            width: 99%;
+            height: 40px;
+            /*font-size: 16px;*/
+            line-height: 40px;
+            padding-left: 10px;
+            margin-top: 5px;
+            border: 1px solid #999;
+        }
+
+        .mr1 {
+            margin-right: 20px;
+        }
+
+        .ml2 {
+            margin-left: 20px;
+        }
+
+        .l-panel-bar {
+            display: none;
+            background: #F5F5F5 url('../../images/ui/gridbar.jpg') repeat-x;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            border-top: 1px solid #D6D6D6;
+        }
+
+        .l-grid-header-inner {
+            width: 1158px;
+        }
+    </style>
+</head>
+<body>
+    <div id="toptoolbar"></div>
+    <div id="SearchDiv1" class="SearchDiv" style="margin-left: 5px; margin-top: 5px; width: 98%; padding: 5px;">
+        <div id="bodyInfo" style="max-height: 230px; margin: 5px; border: 1px solid #c9c9c9; ">
+            <!--<div style="width: 98.9%; border: 1px solid #999; height: 30px; line-height: 30px; padding-left: 10px;" class="b-bg">
+                客户状态:<span style=" margin-right: 20px; margin-left: 20px;" id="Cust_State1">审</span><span id="Cust_IsView">示</span>
+            </div>-->
+            <table class="bor1 w1 b-l-p2" style="margin: 5px; width: 99%;">
+                <tr>
+                    <td class="b-bg w10 t-c" colspan="6" style="text-align: left;">客户状态:<span style=" margin-right: 20px; margin-left: 20px;" id="Cust_State1">审</span><span id="Cust_IsView">示</span></td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        客户名称
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_Name"></span>
+                    </td>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        客户关键字
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_NameKey"></span>
+                    </td>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        座机号码
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_Phone"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        联系人
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_Linkman"></span>
+                    </td>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        联系电话
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_LinkPhone"></span>
+                    </td>
+                    <td class="w20" colspan="2"></td>
+
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        地址
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="Cust_Area" style=" width: 93%;"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        是否计费
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_IsBill"></span>
+                    </td>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        计费金额
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_BillMoney"></span>
+                    </td>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        计费号码
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_BillNumber"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        计费号码归属地
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="Cust_jf_Area" style=" width: 93%;"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        客户性质
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_Nature"></span>
+                    </td>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        外呼人员
+                    </td>
+                    <td class="w20">
+                        <span id="Cust_WH_UserName"></span>
+                    </td>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        录音编码
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="Cust_KFVoice"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        数据来源
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="Cust_Source" style=" width: 93%;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l" style="padding-left:10px;">
+                        备注
+                    </td>
+                    <td class="w20" colspan="5">
+                        <span id="Cust_WH_Remark" style=" width: 93%;"></span>
+                    </td>
+                </tr>
+            </table>
+            <div style="margin:5px;">
+                <div class="b-bg jsxx" style="height: 30px; line-height: 30px; border: 1px solid #c9c9c9; border-bottom: 0px; ">
+                    <span class="mr1" id="jfxx">计费信息</span>|<span class="ml2" style="color:#999;" id="dlmx">登录明细</span>
+                </div>
+                <div id="grid" style="display: block;">
+
+                </div>
+                <div id="grid2" style="display: none;">
+
+                </div>
+            </div>
+        </div>
+        <div id="botnInfo" style="border: 1px solid #c9c9c9; margin: 5px;">
+            <!--<div style="width: 96.8%; border: 1px solid #c9c9c9; height: 30px; line-height: 30px; padding-left: 10px; margin: 5px;" class="b-bg">
+                状态修改区(上次变更时间<span id="Cust_OperateTime"></span>）
+            </div>-->
+            <table class="bor1 w1 b-l-p2" style="margin: 5px; width: 97.8%; ">
+                <tr>
+                    <td class="b-bg w10 t-c" colspan="6" style="text-align: left;">
+                        状态修改区(上次变更时间<span id="Cust_OperateTime"></span>) <span id="sp_LastModify" style="color:red"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l">
+                        客户状态<span style="color: Red">*</span>
+                    </td>
+                    <td class="w20" colspan="6" id="ttd">
+                        <input id="Cust_State" onchange="change();" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l">
+                        退订时间
+                    </td>
+                    <td class="w20">
+                        <input id="Cust_UnOrder" type="text" />
+                    </td>
+                    <td class="b-bg w10 t-l">
+                        退费时间
+                    </td>
+                    <td class="w20">
+                        <input id="Cust_OutDate" type="text" />
+                    </td>
+                    <td class="b-bg w10 t-l">
+                        退费金额
+                    </td>
+                    <td class="w20">
+                        <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="Cust_OutMoney" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l">
+                        退费人
+                    </td>
+                    <td class="w20">
+                        <input id="Cust_ReturnMan" type="text" />
+                    </td>
+                    <td class="b-bg w10 t-l">
+                        成功少赔
+                    </td>
+                    <td class="w20" colspan="1">
+                        <input id="Cust_IsLessMoney" type="checkbox" style="height:20px;width:35px;float:left;" />
+                    </td>
+                    <td class="b-bg w10 t-l">
+                        保留
+                    </td>
+                    <td class="w20" colspan="2">
+                        <input id="Cust_IsKeep" type="checkbox" style="height:20px;width:35px;float:left;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l">
+                        投诉性质<span style="color: Red">*</span>
+                    </td>
+                    <td class="w20">
+                        <input id="Cust_TSNatrue" type="text" />
+                    </td>
+                    <td class="b-bg w10 t-l">
+                        投诉来源
+                    </td>
+                    <td class="w20">
+                        <input id="Cust_TSSource" type="text" />
+                    </td>
+                    <td class="b-bg w10 t-l">
+                        投诉号码<span style="color: Red">*</span>
+                    </td>
+                    <td class="w20" colspan="3">
+                        <input id="Cust_TSPhone" type="text" maxlength="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l">
+                        是否加入黑名单
+                    </td>
+                    <td class="w20" colspan="6">
+                        <input id="Cust_IsAddBlack" type="checkbox" style="height:20px;width:35px;float:left;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b-bg w10 t-l">
+                        客服备注
+                    </td>
+                    <td class="w20" colspan="6">
+                        <textarea id="Cust_KF_Remark" style="width: 800px; min-height: 20px; padding: 10px;" maxlength="600"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#jfxx").click(function () {
+                $("#jfxx").attr("style", "color:#000");
+                $("#dlmx").attr("style", "color:#999");
+                $("#grid").show();
+                $("#grid2").hide();
+            })
+            $("#dlmx").click(function () {
+                $("#dlmx").attr("style", "color:#000");
+                $("#jfxx").attr("style", "color:#999");
+                $("#grid").hide();
+                $("#grid2").show();
+            })
+        })
+    </script>
+</body>
+</html>

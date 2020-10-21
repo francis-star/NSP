@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>上传文件</title>
+    <link href="../../JS/lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/gray2014/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="../../JS/lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="../../CSS/box.css" />
+
+    <script src="../../JS/jquery-1.9.0.min.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+
+    <script src="../../JS/lib/ligerUI/js/plugins/ligerGridPaging.js"></script>
+
+    <script src="../../JS/artDialog4.1.4/artDialog.source.js?skin=default" type="text/javascript"></script>
+
+    <script src="../../JS/artDialog4.1.4/plugins/iframeTools.source.js" type="text/javascript"></script>
+
+    <script src="../../JS/HCWeb2016.js"></script>
+    <script src="../../JSHC/Pub.js" type="text/javascript"></script>
+    <script src="../../JS/GetQueryString.js" type="text/javascript"></script>
+    <script src="../../JSHC/SSB/ImportData.js"></script>
+
+</head>
+<body>
+    <div id="toptoolbar">
+    </div>
+    <div style="margin-left:10px;margin:10px">
+        <span>1、请将数据通过excel中的“另存为”保存成txt格式进行上传</span><br />
+        <!--<span>
+            <a style="text-align: center; font-size: large; text-decoration: none;" href="../../UpFile/实时保数据筛选模版.xls">
+                <input type="button" value="下载模板" style="font-size: 14px; margin-bottom: 5px; ">
+            </a>
+        </span>-->
+        <!--<hr style="height: 1px; border: none; border-top: 2px solid #d3d3d3; margin-top: 15px; margin-bottom: 15px; " />-->
+    </div>
+    <table class="bor1 w1 f14 mart5">
+        <tr class="b-l-p">
+            <td class="b-bg w20 t-c">
+                数据上传
+            </td>
+            <td colspan="4">
+                <input type="text" class="in-text" id="tbPC_Name" value="" readonly="readonly" style="width:84%" /><input id="Button1" type="button" value="上传" onclick="UpFile()" />
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+

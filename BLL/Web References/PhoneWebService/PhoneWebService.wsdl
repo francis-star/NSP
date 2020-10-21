@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getCityList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strProvince" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCityListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCityListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findPwdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMessageList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMessageListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMessageListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getComplaintList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depa_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getComplaintListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getComplaintListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getComplaintInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAppe_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getComplaintInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getComplaintInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateComplaint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAppe_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SIGNATURE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIMESTAMP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateComplaintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateComplaintResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="returnButton">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAppe_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="returnButtonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="returnButtonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="changePwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOldPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="changePwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="changePwdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSystemInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSystemInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSystemInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feedback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAdvince" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="feedbackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feedbackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="organizationList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="organizationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organizationListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessSort">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessSortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBusinessSortResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLevel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBusinessListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessListByGPS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLevel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depa_Longitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depa_Latitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessListByGPSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBusinessListByGPSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strBusCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusinessInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBusinessInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePeaceData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cp_Appe_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_Results" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_PeaceTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cp_DispMoney" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="cp_ActMoney" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_Attn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_AttnPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_Head" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_HeadPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_Process" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cp_Reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="u_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xDepa_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xDepa_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePeaceDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="savePeaceDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveMediateData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feed_Appe_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_MediateResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_MediateDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_TortType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_MediateBookNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_NoPerform" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="feed_DisputeMoney" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="feed_RedeemLoss" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_CheatSign" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="feed_DoubleMoney" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="feed_SpiritMoney" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_TransDepa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_AcceptType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_HelpType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_AgentPer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_AgentPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_Content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_NotReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_RightsNext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feed_IsPunish" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="u_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xDepa_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xDepa_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveMediateDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saveMediateDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveRegData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ca_Area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_BS_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_BS_Tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_BS_Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_TS_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_TS_Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_TS_Sex" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_TS_Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_TS_Tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_TS_Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_SP_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_SP_Brand" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_SP_Price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_SP_ConsuTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_SP_DamTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ca_SP_Content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cA_SP_FJ1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cA_SP_FJ2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cA_SP_FJ3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveRegDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saveRegDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidateCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SIGNATURE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIMESTAMP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPhone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidateCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckValidateCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckValidateCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="upfilebyte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileBase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="upfilebyteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upfilebyteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getShare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getShareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getShareResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUpdateFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUpdateFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUpdateFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getModelLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCityCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModelIndex" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getModelLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getModelLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custCityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custLinkman" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custLinkPhone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getCityListSoapIn">
+    <wsdl:part name="parameters" element="tns:getCityList" />
+  </wsdl:message>
+  <wsdl:message name="getCityListSoapOut">
+    <wsdl:part name="parameters" element="tns:getCityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="userLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:userLogin" />
+  </wsdl:message>
+  <wsdl:message name="userLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:userLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="findPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:findPwd" />
+  </wsdl:message>
+  <wsdl:message name="findPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:findPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMessageListSoapIn">
+    <wsdl:part name="parameters" element="tns:getMessageList" />
+  </wsdl:message>
+  <wsdl:message name="getMessageListSoapOut">
+    <wsdl:part name="parameters" element="tns:getMessageListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getComplaintListSoapIn">
+    <wsdl:part name="parameters" element="tns:getComplaintList" />
+  </wsdl:message>
+  <wsdl:message name="getComplaintListSoapOut">
+    <wsdl:part name="parameters" element="tns:getComplaintListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getComplaintInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getComplaintInfo" />
+  </wsdl:message>
+  <wsdl:message name="getComplaintInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getComplaintInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateComplaintSoapIn">
+    <wsdl:part name="parameters" element="tns:updateComplaint" />
+  </wsdl:message>
+  <wsdl:message name="updateComplaintSoapOut">
+    <wsdl:part name="parameters" element="tns:updateComplaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="returnButtonSoapIn">
+    <wsdl:part name="parameters" element="tns:returnButton" />
+  </wsdl:message>
+  <wsdl:message name="returnButtonSoapOut">
+    <wsdl:part name="parameters" element="tns:returnButtonResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePwdSoapIn">
+    <wsdl:part name="parameters" element="tns:changePwd" />
+  </wsdl:message>
+  <wsdl:message name="changePwdSoapOut">
+    <wsdl:part name="parameters" element="tns:changePwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSystemInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getSystemInfo" />
+  </wsdl:message>
+  <wsdl:message name="getSystemInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getSystemInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="feedbackSoapIn">
+    <wsdl:part name="parameters" element="tns:feedback" />
+  </wsdl:message>
+  <wsdl:message name="feedbackSoapOut">
+    <wsdl:part name="parameters" element="tns:feedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="organizationListSoapIn">
+    <wsdl:part name="parameters" element="tns:organizationList" />
+  </wsdl:message>
+  <wsdl:message name="organizationListSoapOut">
+    <wsdl:part name="parameters" element="tns:organizationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessSortSoapIn">
+    <wsdl:part name="parameters" element="tns:getBusinessSort" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessSortSoapOut">
+    <wsdl:part name="parameters" element="tns:getBusinessSortResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessListSoapIn">
+    <wsdl:part name="parameters" element="tns:getBusinessList" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessListSoapOut">
+    <wsdl:part name="parameters" element="tns:getBusinessListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessListByGPSSoapIn">
+    <wsdl:part name="parameters" element="tns:getBusinessListByGPS" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessListByGPSSoapOut">
+    <wsdl:part name="parameters" element="tns:getBusinessListByGPSResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getBusinessInfo" />
+  </wsdl:message>
+  <wsdl:message name="getBusinessInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getBusinessInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="savePeaceDataSoapIn">
+    <wsdl:part name="parameters" element="tns:savePeaceData" />
+  </wsdl:message>
+  <wsdl:message name="savePeaceDataSoapOut">
+    <wsdl:part name="parameters" element="tns:savePeaceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveMediateDataSoapIn">
+    <wsdl:part name="parameters" element="tns:saveMediateData" />
+  </wsdl:message>
+  <wsdl:message name="saveMediateDataSoapOut">
+    <wsdl:part name="parameters" element="tns:saveMediateDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveRegDataSoapIn">
+    <wsdl:part name="parameters" element="tns:saveRegData" />
+  </wsdl:message>
+  <wsdl:message name="saveRegDataSoapOut">
+    <wsdl:part name="parameters" element="tns:saveRegDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="upfilebyteSoapIn">
+    <wsdl:part name="parameters" element="tns:upfilebyte" />
+  </wsdl:message>
+  <wsdl:message name="upfilebyteSoapOut">
+    <wsdl:part name="parameters" element="tns:upfilebyteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getShareSoapIn">
+    <wsdl:part name="parameters" element="tns:getShare" />
+  </wsdl:message>
+  <wsdl:message name="getShareSoapOut">
+    <wsdl:part name="parameters" element="tns:getShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:getVersion" />
+  </wsdl:message>
+  <wsdl:message name="getVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:getVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUpdateFileSoapIn">
+    <wsdl:part name="parameters" element="tns:getUpdateFile" />
+  </wsdl:message>
+  <wsdl:message name="getUpdateFileSoapOut">
+    <wsdl:part name="parameters" element="tns:getUpdateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="getModelLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:getModelLink" />
+  </wsdl:message>
+  <wsdl:message name="getModelLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:getModelLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PhoneWebServiceSoap">
+    <wsdl:operation name="getCityList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到城市列表&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                &lt;br/&gt;strProvince：读取指定省的城市
+                                &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                &lt;br/&gt;SA_Code：地区Code&lt;br/&gt;SA_Name：地区名称&lt;br/&gt;SA_PCode：父级Code</wsdl:documentation>
+      <wsdl:input message="tns:getCityListSoapIn" />
+      <wsdl:output message="tns:getCityListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登录验证&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strName：用户名&lt;br/&gt;strPwd：密码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;U_Code：用户编码&lt;br/&gt;U_LoginName：登录名称&lt;br/&gt;U_Name：真实姓名&lt;br/&gt;U_Phone：手机号码&lt;br/&gt;Depa_Code：所属部门Code
+                                    &lt;br/&gt;Depa_Name：所属部门名称&lt;br/&gt;XDepa_Code：管辖消协Code&lt;br/&gt;XDepa_Name：管辖消协名称&lt;br/&gt;role_Name：角色名称</wsdl:documentation>
+      <wsdl:input message="tns:userLoginSoapIn" />
+      <wsdl:output message="tns:userLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">找回密码&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strName：登录名称&lt;br/&gt;strPhone：手机号码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true和false</wsdl:documentation>
+      <wsdl:input message="tns:findPwdSoapIn" />
+      <wsdl:output message="tns:findPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMessageList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到公共信息&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;iType：1消费警示，2消费新闻，3消协公告为，4投诉曝光为，5退盟商家为，6权威发布，7消法解读，8辨别真伪&lt;br&gt;strCityName：地区名称
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;pub_Code：公共信息Code&lt;br/&gt;Pub_Title：标题名称&lt;br/&gt;Pub_Pic：封面&lt;br/&gt;Pub_Content：简要内容&lt;br/&gt;Pub_Praise：支持数&lt;br/&gt;JoinDate：加入时间</wsdl:documentation>
+      <wsdl:input message="tns:getMessageListSoapIn" />
+      <wsdl:output message="tns:getMessageListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getComplaintList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到投诉单列表&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;iType：待和解，和解中，待调解，已和解，调解成功，调解失败&lt;br/&gt;depa_Code：所在部门Code
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;Appe_Code：投诉单编码&lt;br/&gt;Appe_ShopName：商品或服务名称&lt;br/&gt;Appe_ShopBrandName：品牌&lt;br/&gt;Appe_ShopAsk：投诉内容</wsdl:documentation>
+      <wsdl:input message="tns:getComplaintListSoapIn" />
+      <wsdl:output message="tns:getComplaintListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getComplaintInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">投诉单详情&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strAppe_Code：投诉单编码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;Appe_ShopName：商品或服务名称&lt;br/&gt;Appe_ShopBrandName：品牌&lt;br/&gt;Appe_ShopMoney：消费金额&lt;br/&gt;Appe_ShopDate：消费日期
+                                    &lt;br/&gt;Appe_ShopAddress：商家地址&lt;br/&gt;Appe_ShopAsk：投诉内容&lt;br/&gt;Appe_Period：要求办理期限&lt;br/&gt;Appe_UserName：投诉人
+                                    &lt;br/&gt;Appe_UserSex：性别&lt;br/&gt;Appe_UserRelationPhone：联系电话&lt;br/&gt;cP_Head：负责人&lt;br/&gt;cP_HeadPhone：负责人电话&lt;br/&gt;cP_Attn：经办人&lt;br/&gt;cP_AttnPhone：经办人电话
+                                    &lt;br/&gt;feed_MediateResult：调解结果&lt;br/&gt;feed_TortType：侵权类型&lt;br/&gt;feed_NoPerform：未履行义务&lt;br/&gt;feed_DisputeMoney：争议金额
+                                    &lt;br/&gt;feed_RedeemLoss：挽回经济损失&lt;br/&gt;appe_CompanyName：企业名称</wsdl:documentation>
+      <wsdl:input message="tns:getComplaintInfoSoapIn" />
+      <wsdl:output message="tns:getComplaintInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateComplaint">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改投诉单状态&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strAppe_Code：投诉单编码&lt;br/&gt;iType：1待和解转和解中
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:updateComplaintSoapIn" />
+      <wsdl:output message="tns:updateComplaintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="returnButton">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">投诉单退回&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strAppe_Code：投诉单编码&lt;br/&gt;strUserName：操作人&lt;br/&gt;content：退回内容
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:returnButtonSoapIn" />
+      <wsdl:output message="tns:returnButtonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="changePwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改密码&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;uCode：登录人Code&lt;br/&gt;strOldPwd：老密码&lt;br/&gt;strNewPwd：新密码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:changePwdSoapIn" />
+      <wsdl:output message="tns:changePwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSystemInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">关于我们&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strCity：城市名称
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;描述</wsdl:documentation>
+      <wsdl:input message="tns:getSystemInfoSoapIn" />
+      <wsdl:output message="tns:getSystemInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="feedback">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">意见反馈&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strAdvince：城市名称&lt;br/&gt;strPhone：手机号码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:feedbackSoapIn" />
+      <wsdl:output message="tns:feedbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="organizationList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">维权机构列表&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strCityCode：城市Code
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;Depa_Code：部门Code&lt;br/&gt;Depa_Name：部门名称&lt;br/&gt;Depa_Address：地址&lt;br/&gt;Depa_Phone：电话&lt;br/&gt;Depa_PostCode：邮编&lt;br/&gt;depa_Longitude：经度&lt;br/&gt;depa_Latitude：纬度</wsdl:documentation>
+      <wsdl:input message="tns:organizationListSoapIn" />
+      <wsdl:output message="tns:organizationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessSort">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商家类别&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;CSet_Code：Code&lt;br/&gt;CSet_Name：名称</wsdl:documentation>
+      <wsdl:input message="tns:getBusinessSortSoapIn" />
+      <wsdl:output message="tns:getBusinessSortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">诚信商家列表&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strType：商家类别，如超市、食杂店&lt;br/&gt;strLevel：1一般联盟企业，2示范联盟企业，3非联盟企业&lt;br/&gt;strCityCode：城市Code
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;Depa_Code：企业Code&lt;br/&gt;Depa_Name：企业名称&lt;br/&gt;Depa_Address：地址&lt;br/&gt;Depa_Phone：电话&lt;br/&gt;Depa_PostCode：邮编
+                                    &lt;br/&gt;Depa_Logo：logo&lt;br/&gt;Depa_Content：简介&lt;br/&gt;Depa_SpeCommit：特别承诺&lt;br/&gt;depa_Longitude：经度&lt;br/&gt;depa_Latitude：纬度&lt;br/&gt;depa_Url：企业网站</wsdl:documentation>
+      <wsdl:input message="tns:getBusinessListSoapIn" />
+      <wsdl:output message="tns:getBusinessListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessListByGPS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过GPS定位诚信商家列表&lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strType：商家类别，如超市、食杂店&lt;br/&gt;strLevel：1一般联盟企业，2示范联盟企业，3非联盟企业&lt;br/&gt;城市Code&lt;br/&gt;depa_Longitude：经度&lt;br/&gt;depa_Latitude：纬度
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;Depa_Code：企业Code&lt;br/&gt;Depa_Name：企业名称&lt;br/&gt;Depa_Address：地址&lt;br/&gt;Depa_Phone：电话&lt;br/&gt;Depa_PostCode：邮编
+                                    &lt;br/&gt;Depa_Logo：logo&lt;br/&gt;Depa_Content：简介&lt;br/&gt;Depa_SpeCommit：特别承诺&lt;br/&gt;depa_Longitude：经度&lt;br/&gt;depa_Latitude：纬度&lt;br/&gt;depa_Url：企业网站</wsdl:documentation>
+      <wsdl:input message="tns:getBusinessListByGPSSoapIn" />
+      <wsdl:output message="tns:getBusinessListByGPSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">诚信商家明细
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strBusCode：企业Code
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;Depa_Code：企业Code&lt;br/&gt;Depa_Name：企业名称&lt;br/&gt;Depa_Address：地址&lt;br/&gt;Depa_Phone：电话&lt;br/&gt;Depa_PostCode：邮编
+                                    &lt;br/&gt;Depa_Logo：logo&lt;br/&gt;Depa_Content：简介&lt;br/&gt;Depa_SpeCommit：特别承诺&lt;br/&gt;depa_Longitude：经度&lt;br/&gt;depa_Latitude：纬度&lt;br/&gt;depa_Url：企业网站</wsdl:documentation>
+      <wsdl:input message="tns:getBusinessInfoSoapIn" />
+      <wsdl:output message="tns:getBusinessInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePeaceData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存和解信息
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;cp_Appe_Code：投诉单编码&lt;br/&gt;cp_Results：处理结果&lt;br/&gt;cp_PeaceTime：和解日期&lt;br/&gt;cp_DispMoney：争议金额
+                                    &lt;br/&gt;cp_ActMoney：实际解决金额&lt;br/&gt;cp_Attn：经办人&lt;br/&gt;cp_AttnPhone：经办人电话&lt;br/&gt;cp_Head：客服负责人&lt;br/&gt;cp_HeadPhone：负责人电话
+                                    &lt;br/&gt;cp_Process：处理过程&lt;br/&gt;cp_Reason：和解具体内容或未和解原因&lt;br/&gt;U_Name：操作人&lt;br/&gt;XDepa_Code：管辖消协Code&lt;br/&gt;XDepa_Name：管辖消协名称
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:savePeaceDataSoapIn" />
+      <wsdl:output message="tns:savePeaceDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveMediateData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存调解信息
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;feed_Appe_Code：投诉单编码&lt;br/&gt;feed_MediateResult：调解结果&lt;br/&gt;feed_MediateDate：调解结束日期
+                                    &lt;br/&gt;feed_TortType：侵权类型&lt;br/&gt;feed_MediateBookNum：调解书文号&lt;br&gt;feed_NoPerform：未履行义务&lt;br/&gt;feed_DisputeMoney：争议金额
+                                    &lt;br/&gt;feed_RedeemLoss：挽回经济损失&lt;br/&gt;feed_CheatSign：欺诈标志&lt;br/&gt;feed_DoubleMoney：加倍赔偿金额&lt;br/&gt;feed_SpiritMoney：精神赔偿金额
+                                    &lt;br/&gt;feed_TransDepa：办理部门&lt;br/&gt;feed_AcceptType：受理类型&lt;br/&gt;feed_HelpType：协助单位类型&lt;br/&gt;feed_AgentPer：经办人
+                                    &lt;br/&gt;feed_State：应急处置进展状态&lt;br/&gt;feed_AgentPhone：经办人电话&lt;br/&gt;feed_Content：反馈内容&lt;br/&gt;feed_NotReason：未达成原因
+                                    &lt;br/&gt;feed_IsPunish：是否提请行政机关行政处罚&lt;br/&gt;u_Name：操作人&lt;br/&gt;xDepa_Code：管辖消协Code&lt;br/&gt;xDepa_Name：管辖消协名称
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:saveMediateDataSoapIn" />
+      <wsdl:output message="tns:saveMediateDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveRegData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存我要维权
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;ca_Area：区域名称&lt;br/&gt;ca_BS_Name：商家名称&lt;br/&gt;ca_BS_Tel：商家电话&lt;br/&gt;ca_BS_Address：商家地址&lt;br/&gt;ca_TS_Name：投诉人&lt;br/&gt;ca_TS_Type：投诉类别
+                                    ca_TS_Sex：性别&lt;br/&gt;ca_TS_Phone：手机号码&lt;br/&gt;ca_TS_Tel：联系电话&lt;br/&gt;ca_TS_Email：Email&lt;br/&gt;ca_SP_Name：商品或服务名称&lt;br/&gt;ca_SP_Brand：品牌名称
+                                    &lt;br/&gt;ca_SP_Price：价格&lt;br/&gt;ca_SP_ConsuTime：消费日期&lt;br/&gt;ca_SP_DamTime：损害日期&lt;br/&gt;ca_SP_Content：投诉内容
+                                    &lt;br/&gt;cA_SP_FJ1：照片地址，每个照片地址以“，”隔开&lt;br/&gt;cA_SP_FJ2：视频地址&lt;br/&gt;cA_SP_FJ3：录音地址
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:saveRegDataSoapIn" />
+      <wsdl:output message="tns:saveRegDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到验证码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;iPhone：手机号码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;五位验证码</wsdl:documentation>
+      <wsdl:input message="tns:GetValidateCodeSoapIn" />
+      <wsdl:output message="tns:GetValidateCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidateCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存我要维权
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;iPhone：手机号码&lt;br/&gt;ValidateCode：验证码
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:CheckValidateCodeSoapIn" />
+      <wsdl:output message="tns:CheckValidateCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="upfilebyte">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">文件上传
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;FileBase：文件Base64加密字符串&lt;br/&gt;ext：文件扩展名
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;true，false</wsdl:documentation>
+      <wsdl:input message="tns:upfilebyteSoapIn" />
+      <wsdl:output message="tns:upfilebyteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getShare">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">分享给好友
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;超链接</wsdl:documentation>
+      <wsdl:input message="tns:getShareSoapIn" />
+      <wsdl:output message="tns:getShareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到版本号
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;ver：最新版本号&lt;br/&gt;description：更新内容</wsdl:documentation>
+      <wsdl:input message="tns:getVersionSoapIn" />
+      <wsdl:output message="tns:getVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到最新版本文件
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;超链接</wsdl:documentation>
+      <wsdl:input message="tns:getUpdateFileSoapIn" />
+      <wsdl:output message="tns:getUpdateFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getModelLink">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">得到模块超链接地址
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;strCityCode：城市Code&lt;br/&gt;ModelIndex：1消协公告2投诉曝光3消费警示4消法解读5消费调查6比较试验7帮助页面
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt;超链接</wsdl:documentation>
+      <wsdl:input message="tns:getModelLinkSoapIn" />
+      <wsdl:output message="tns:getModelLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">全国支撑系统 向此库插入一条数据
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;参数&lt;/span&gt;
+                                    &lt;br/&gt;custCityCode：市编码&lt;br/&gt;custName：名称&lt;br/&gt;custAddress：地址&lt;br/&gt;custPhone：电话&lt;br/&gt;custLinkman：联系人&lt;br/&gt;custLinkPhone：联系人电话
+                                    &lt;br/&gt;&lt;span style='color: red;font-weight: bold'&gt;返回值&lt;/span&gt;
+                                    &lt;br/&gt; true，false</wsdl:documentation>
+      <wsdl:input message="tns:AddCustomerSoapIn" />
+      <wsdl:output message="tns:AddCustomerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PhoneWebServiceSoap" type="tns:PhoneWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCityList">
+      <soap:operation soapAction="http://tempuri.org/getCityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLogin">
+      <soap:operation soapAction="http://tempuri.org/userLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findPwd">
+      <soap:operation soapAction="http://tempuri.org/findPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageList">
+      <soap:operation soapAction="http://tempuri.org/getMessageList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComplaintList">
+      <soap:operation soapAction="http://tempuri.org/getComplaintList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComplaintInfo">
+      <soap:operation soapAction="http://tempuri.org/getComplaintInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateComplaint">
+      <soap:operation soapAction="http://tempuri.org/updateComplaint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returnButton">
+      <soap:operation soapAction="http://tempuri.org/returnButton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePwd">
+      <soap:operation soapAction="http://tempuri.org/changePwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemInfo">
+      <soap:operation soapAction="http://tempuri.org/getSystemInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feedback">
+      <soap:operation soapAction="http://tempuri.org/feedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="organizationList">
+      <soap:operation soapAction="http://tempuri.org/organizationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessSort">
+      <soap:operation soapAction="http://tempuri.org/getBusinessSort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessList">
+      <soap:operation soapAction="http://tempuri.org/getBusinessList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessListByGPS">
+      <soap:operation soapAction="http://tempuri.org/getBusinessListByGPS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessInfo">
+      <soap:operation soapAction="http://tempuri.org/getBusinessInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePeaceData">
+      <soap:operation soapAction="http://tempuri.org/savePeaceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveMediateData">
+      <soap:operation soapAction="http://tempuri.org/saveMediateData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveRegData">
+      <soap:operation soapAction="http://tempuri.org/saveRegData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCode">
+      <soap:operation soapAction="http://tempuri.org/GetValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidateCode">
+      <soap:operation soapAction="http://tempuri.org/CheckValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="upfilebyte">
+      <soap:operation soapAction="http://tempuri.org/upfilebyte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShare">
+      <soap:operation soapAction="http://tempuri.org/getShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="http://tempuri.org/getVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateFile">
+      <soap:operation soapAction="http://tempuri.org/getUpdateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModelLink">
+      <soap:operation soapAction="http://tempuri.org/getModelLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap:operation soapAction="http://tempuri.org/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PhoneWebServiceSoap12" type="tns:PhoneWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCityList">
+      <soap12:operation soapAction="http://tempuri.org/getCityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLogin">
+      <soap12:operation soapAction="http://tempuri.org/userLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findPwd">
+      <soap12:operation soapAction="http://tempuri.org/findPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageList">
+      <soap12:operation soapAction="http://tempuri.org/getMessageList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComplaintList">
+      <soap12:operation soapAction="http://tempuri.org/getComplaintList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComplaintInfo">
+      <soap12:operation soapAction="http://tempuri.org/getComplaintInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateComplaint">
+      <soap12:operation soapAction="http://tempuri.org/updateComplaint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returnButton">
+      <soap12:operation soapAction="http://tempuri.org/returnButton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePwd">
+      <soap12:operation soapAction="http://tempuri.org/changePwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemInfo">
+      <soap12:operation soapAction="http://tempuri.org/getSystemInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feedback">
+      <soap12:operation soapAction="http://tempuri.org/feedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="organizationList">
+      <soap12:operation soapAction="http://tempuri.org/organizationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessSort">
+      <soap12:operation soapAction="http://tempuri.org/getBusinessSort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessList">
+      <soap12:operation soapAction="http://tempuri.org/getBusinessList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessListByGPS">
+      <soap12:operation soapAction="http://tempuri.org/getBusinessListByGPS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessInfo">
+      <soap12:operation soapAction="http://tempuri.org/getBusinessInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePeaceData">
+      <soap12:operation soapAction="http://tempuri.org/savePeaceData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveMediateData">
+      <soap12:operation soapAction="http://tempuri.org/saveMediateData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveRegData">
+      <soap12:operation soapAction="http://tempuri.org/saveRegData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCode">
+      <soap12:operation soapAction="http://tempuri.org/GetValidateCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidateCode">
+      <soap12:operation soapAction="http://tempuri.org/CheckValidateCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="upfilebyte">
+      <soap12:operation soapAction="http://tempuri.org/upfilebyte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShare">
+      <soap12:operation soapAction="http://tempuri.org/getShare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap12:operation soapAction="http://tempuri.org/getVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdateFile">
+      <soap12:operation soapAction="http://tempuri.org/getUpdateFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getModelLink">
+      <soap12:operation soapAction="http://tempuri.org/getModelLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap12:operation soapAction="http://tempuri.org/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PhoneWebService">
+    <wsdl:port name="PhoneWebServiceSoap" binding="tns:PhoneWebServiceSoap">
+      <soap:address location="https://webservice.jshcsoft.com/WQTPhoneWebService/PhoneWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PhoneWebServiceSoap12" binding="tns:PhoneWebServiceSoap12">
+      <soap12:address location="https://webservice.jshcsoft.com/WQTPhoneWebService/PhoneWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
