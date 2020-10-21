@@ -288,11 +288,13 @@ namespace DAL
                 .ToPageList(model.PageIndex, model.PageNum, ref invalidTotalCount);
 
             var validTotalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type == "1").Count();
+            var totalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode).Count();
             var result = new
             {
                 invalidTotalCount = invalidTotalCount,
                 invalidDataList = invalidDataList,
-                validTotalCount = validTotalCount
+                validTotalCount = validTotalCount,
+                totalCount = totalCount
             };
             return JsonConvert.SerializeObject(result);
         }
@@ -305,11 +307,12 @@ namespace DAL
             var validDataList = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type == "1")
                                 .ToPageList(model.PageIndex, model.PageNum, ref validTotalCount);
 
-
+            var totalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode).Count();
             var result = new
             {
                 validDataList = validDataList,
-                validTotalCount = validTotalCount
+                validTotalCount = validTotalCount,
+                totalCount = totalCount
             };
             return JsonConvert.SerializeObject(result);
 
