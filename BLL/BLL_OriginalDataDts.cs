@@ -197,6 +197,18 @@ namespace BLL
             return json;
         }
 
+        /// <summary>
+        /// 获取实时保数据总量，有效总量，无效总量
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public string GetSSBDataTotalCount(object obj)
+        {
+            var arr = obj as InOriginViewModle;
+            var result = dAL_OriginalDataDts.GetSSBDataTotalCount(arr);
+            return null;
+        }
+
         public string GetNoValidYearData(object obj)
         {
             ArrayList arr = JSON.getPara(obj);

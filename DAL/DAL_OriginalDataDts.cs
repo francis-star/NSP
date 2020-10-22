@@ -410,6 +410,26 @@ namespace DAL
                                     ORDER BY t.type");
         }
 
+        public string GetSSBDataTotalCount(InOriginViewModle model)
+        {
+            var db = DbService.Instance;
+            var data = db.Queryable<SSB_OriginalData>().Where(it => it.OD_Code == model.ODD_OD_Code).First();
+            var result = new InOriginCountModel
+            {
+                TotalCount = 0,
+                ValidDataCount = 0,
+                InValidDataCount = 0
+            };
+            if (data != null)
+            {
+                result.TotalCount = data.OD_TotalCount;
+                result.ValidDataCount = data.OD_ValidCount;
+                result.InValidDataCount = data.OD_NoValidCount;
+
+            };
+            return JsonConvert.SerializeObject(result);
+        }
+
         public DataTable GetNoValidYearData(string odCode)
         {
             return SearchData($@"Select * from (SELECT '全部' year
