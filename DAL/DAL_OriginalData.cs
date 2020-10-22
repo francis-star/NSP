@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using DAL.InMolde;
+using DAL.Service;
 using HCWeb2016;
 
 namespace DAL
@@ -1319,6 +1321,129 @@ namespace DAL
             #endregion
 
             return flag;
+        }
+
+        /// <summary>
+        /// 批量导入有效数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool BatchImportValidData(InOriginViewModle model)
+        {
+            bool flag = false;
+            #region 新导入数据库不读文件 使用程序sqlbulk导入
+            string LastFileName = model.FileName.Substring(model.FileName.LastIndexOf('/') + 1);
+            string abPath = AppDomain.CurrentDomain.BaseDirectory + "\\UpFile\\Files\\";
+            try
+            {
+                if (!File.Exists(abPath + LastFileName))//判断文件存不存在 不存在重新下载
+                {
+                    using (var client = new System.Net.WebClient())
+                    {
+                        client.DownloadFile(model.FileName, HttpContext.Current.Request.PhysicalApplicationPath + "UpFile\\Files\\" + Path.GetFileName(LastFileName));
+                    }
+                }
+                else
+                {
+                    using (DataTable table = new DataTable())
+                    {
+                        //为数据表创建相对应的数据列
+                        table.Columns.Add("客户编码");
+                        table.Columns.Add("客户名称");
+                        table.Columns.Add("计费号码");
+                        table.Columns.Add("地址");
+                        table.Columns.Add("联系人");
+                        table.Columns.Add("联系电话");
+                        table.Columns.Add("是否计费");
+                        table.Columns.Add("JoinMan");
+                        table.Columns.Add("ODD_Code");
+                        table.Columns.Add("城市编码");
+                        //string ODD_OD_Code = GetCode();
+
+                        string cityCode = string.Empty;
+
+                        using (StreamReader sr = new StreamReader(abPath + LastFileName, Encoding.GetEncoding("gb2312")))
+                        {
+                            string str;
+                            sr.ReadLine();//第一行列头数据
+                            while ((str = sr.ReadLine()) != null)
+                            {
+                                string[] temp = str.Replace("\"", "").Split((char)9);
+
+                                //插入数据到Datatable供bulkinsert
+                                //客户名称和号码都存在才导入 否则过滤不导入
+                                if (!string.IsNullOrEmpty(temp[0]) && !string.IsNullOrEmpty(temp[1]))
+                                {
+                                    if (string.IsNullOrEmpty(cityCode))
+                                    {
+                                        var tab = model.TableName + "_OriginalData";
+                                        var db = DbService.Instance;
+                                        var str1 = $@"SELECT OD_CityCode FROM " + tab + " WHERE OD_Code= '" + temp[0].Trim().Replace(" ", "") + "'";
+                                        cityCode = db.Ado.SqlQuery<string>(str1, new { })[0];
+                                    }
+                                    DataRow dr = table.NewRow();//创建数据行
+                                    dr["客户编码"] = temp[0].Trim().Replace(" ", "");
+                                    dr["客户名称"] = temp[1].Trim().Replace(" ", "");
+                                    dr["计费号码"] = temp[2].Trim().Replace(" ", "").Replace(",", "").Replace("-", "").Replace("/", "");
+                                    dr["地址"] = temp[3].Trim().Replace(" ", "");
+                                    dr["联系人"] = temp[4].Trim().Replace(" ", "");
+                                    dr["联系电话"] = temp[5].Trim().Replace(" ", "").Replace(",", "").Replace("-", "").Replace("/", "");
+                                    dr["是否计费"] = temp[6].Trim() == null ? "是" : "否";
+                                    dr["JoinMan"] = model.JoinMan;
+                                    dr["ODD_Code"] = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 20);
+                                    dr["城市编码"] = cityCode;
+
+                                    //将创建的数据行添加到table中
+                                    table.Rows.Add(dr);
+                                }
+                            }
+                        }
+                        using (SqlConnection destinationConnection = new SqlConnection(ConfigurationManager.AppSettings["ConnStringSQL"]))
+                        {
+                            destinationConnection.Open();
+
+                            using (SqlTransaction transaction = destinationConnection.BeginTransaction())
+                            {
+                                using (SqlBulkCopy bulkCopy = new SqlBulkCopy(destinationConnection, SqlBulkCopyOptions.Default, transaction))
+                                {
+                                    bulkCopy.DestinationTableName = model.TableName + "_OriginalDataValid"; //设置数据库中对象的表名
+                                    bulkCopy.BatchSize = 1000;
+                                    bulkCopy.BulkCopyTimeout = 5000;
+                                    //设置数据表table和数据库中表的列对应关系
+                                    bulkCopy.ColumnMappings.Add("ODD_Code", "ODD_Code");
+                                    bulkCopy.ColumnMappings.Add("客户编码", "ODD_OD_Code");
+                                    bulkCopy.ColumnMappings.Add("客户名称", "ODD_Name");
+                                    bulkCopy.ColumnMappings.Add("计费号码", "ODD_Phone");
+                                    bulkCopy.ColumnMappings.Add("地址", "ODD_Address");
+                                    bulkCopy.ColumnMappings.Add("联系人", "ODD_LinkMan");
+                                    bulkCopy.ColumnMappings.Add("联系电话", "ODD_LinkPhone");
+                                    bulkCopy.ColumnMappings.Add("是否计费", "ODD_IsBill");
+                                    bulkCopy.ColumnMappings.Add("JoinMan", "JoinMan");
+                                    bulkCopy.ColumnMappings.Add("城市编码", "ODD_CityCode");
+
+                                    try
+                                    {
+                                        bulkCopy.WriteToServer(table);
+                                        transaction.Commit();
+                                        flag = true;
+                                    }
+                                    catch//(Exception ex)
+                                    {
+                                        transaction.Rollback();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                flag = false;
+            }
+            return flag;
+            #endregion
+
         }
 
         #endregion

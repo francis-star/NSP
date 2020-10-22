@@ -20,6 +20,8 @@ namespace DAL.InMolde
 
         public string TableName { get; set; }
 
+        public string OriginTableName { get; set; }
+
         /// <summary>
         /// 是否按条件导出(0：按条件导出；1：复选框导出)
         /// </summary>
@@ -107,6 +109,13 @@ namespace DAL.InMolde
         /// 开通时间
         /// </summary>
         public string OpenDate { get; set; }
+
+        /// <summary>
+        ///  文件
+        /// </summary>
+        public string FileName { get; set; }
+
+        public string JoinMan { get; set; }
 
         /// <summary>
         /// 退订时间

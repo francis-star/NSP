@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 using System.Web;
 using DAL;
+using DAL.InMolde;
 using HCWeb2016;
 
 namespace BLL
@@ -601,6 +602,18 @@ namespace BLL
             if (flag)
                 return "true";
             return "false";
+        }
+
+        /// <summary>
+        /// 批量导入有效数据
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public string BatchImportValidData(object obj)
+        {
+            var arr = obj as InOriginViewModle;
+
+            return "true";
         }
 
         #endregion
