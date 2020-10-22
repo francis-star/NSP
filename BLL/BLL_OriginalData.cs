@@ -611,8 +611,8 @@ namespace BLL
         /// <returns></returns>
         public string BatchImportValidData(object obj)
         {
-            var arr = obj as InOriginViewModle;
-
+            ArrayList arr = JSON.getPara(obj);
+            bool flag = dAL_OriginalData.BatchImportValidData(ValueHandler.GetStringValue(arr[0]), ValueHandler.GetStringValue(arr[2]), ValueHandler.GetStringValue(BLL_User.User_Name));
             return "true";
         }
 
