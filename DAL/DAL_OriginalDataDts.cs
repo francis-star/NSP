@@ -4,6 +4,7 @@
 //开发时间：2016年11月28日
 //////////////////////////////////////////////////////////////////////////////
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -262,57 +263,55 @@ namespace DAL
             return SearchData(sb.ToString());
         }
 
-        public string GetInvalidSSBViewData(InOriginViewModle model)
+        public string GetInvalidSSBViewData(ArrayList arr)
         {
             var db = DbService.Instance;
             int invalidTotalCount = 0;
-            var invalidDataList = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type != "1")
-                .WhereIF(!string.IsNullOrEmpty(model.ApprovedUser), it => it.ApprovedUser == model.ApprovedUser)
-                .WhereIF(!string.IsNullOrEmpty(model.BlackList), it => it.BlackList == model.BlackList)
-                .WhereIF(!string.IsNullOrEmpty(model.BusinessName), it => it.ODD_Business == model.BusinessName)
-                .WhereIF(!string.IsNullOrEmpty(model.ChargeNumber), it => it.ODD_Phone == model.ChargeNumber)
-                .WhereIF(!string.IsNullOrEmpty(model.CustName), it => it.ODD_Name == model.CustName)
-                .WhereIF(!string.IsNullOrEmpty(model.DuplicateData), it => it.DuplicateData == model.DuplicateData)
-                .WhereIF(!string.IsNullOrEmpty(model.IsCharge), it => it.ODD_IsBill == model.IsCharge)
-                .WhereIF(!string.IsNullOrEmpty(model.Keywords_high), it => it.Keywords_high == model.Keywords_high)
-                .WhereIF(!string.IsNullOrEmpty(model.Keywords_low), it => it.Keywords_low == model.Keywords_low)
-                .WhereIF(!string.IsNullOrEmpty(model.LinkPhone), it => !string.IsNullOrEmpty(it.ODD_LinkPhone))
-                .WhereIF(!string.IsNullOrEmpty(model.OpenDate), it => it.OpenDate == SqlFunc.ToDate(model.OpenDate))
-                .WhereIF(!string.IsNullOrEmpty(model.UnsubscribeTime), it => it.UnsubscribeTime == SqlFunc.ToDate(model.UnsubscribeTime))
-                .WhereIF(!string.IsNullOrEmpty(model.RefundUser), it => it.RefundUser == model.RefundUser)
-                .WhereIF(!string.IsNullOrEmpty(model.RepetitionType), it => it.RepetitionType == model.RepetitionType)
-                .WhereIF(!string.IsNullOrEmpty(model.TSNature), it => it.TSNature == model.TSNature)
-                .WhereIF(!string.IsNullOrEmpty(model.TSNumber), it => it.TSNumber == model.TSNumber)
-                .WhereIF(!string.IsNullOrEmpty(model.TSSource), it => it.TSSource == model.TSSource)
-                .WhereIF(!string.IsNullOrEmpty(model.UnsubscribedUser), it => it.UnsubscribedUser == model.UnsubscribedUser)
-                .ToPageList(model.PageIndex, model.PageNum, ref invalidTotalCount);
+            var invalidDataList = db.Queryable<SSB_OriginalDataDts>().Where(it =>it.ODD_Type != "1")
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[0])), it => it.ODD_OD_Code == ValueHandler.GetStringValue(arr[0]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[8])), it => it.ApprovedUser == ValueHandler.GetStringValue(arr[8]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[11])), it => it.BlackList == ValueHandler.GetStringValue(arr[11]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[17])), it => it.ODD_Business == ValueHandler.GetStringValue(arr[17]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[6])), it => it.ODD_Phone == ValueHandler.GetStringValue(arr[6]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[5])), it => it.ODD_Name == ValueHandler.GetStringValue(arr[5]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[7])), it => it.DuplicateData == ValueHandler.GetStringValue(arr[7]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[18])), it => it.ODD_IsBill == ValueHandler.GetStringValue(arr[18]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[14])), it => it.Keywords_high == ValueHandler.GetStringValue(arr[14]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[15])), it => it.Keywords_low == ValueHandler.GetStringValue(arr[15]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[12])), it => !string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[12])))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[21])), it => it.OpenDate == SqlFunc.ToDate(ValueHandler.GetStringValue(arr[21])))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[22])), it => it.UnsubscribeTime == SqlFunc.ToDate(ValueHandler.GetStringValue(arr[22])))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[10])), it => it.RefundUser == ValueHandler.GetStringValue(arr[10]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[16])), it => it.RepetitionType == ValueHandler.GetStringValue(arr[16]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[19])), it => it.TSNature == ValueHandler.GetStringValue(arr[19]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[13])), it => it.TSNumber == ValueHandler.GetStringValue(arr[13]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[20])), it => it.TSSource == ValueHandler.GetStringValue(arr[20]))
+                .WhereIF(!string.IsNullOrEmpty(ValueHandler.GetStringValue(arr[9])), it => it.UnsubscribedUser == ValueHandler.GetStringValue(arr[9]))
+                .ToPageList(int.Parse(ValueHandler.GetStringValue(arr[23])), int.Parse(ValueHandler.GetStringValue(arr[24])), ref invalidTotalCount);
 
-            var validTotalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type == "1").Count();
-            var totalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode).Count();
+            //var validTotalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type == "1").Count();
+            //var totalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode).Count();
             var result = new
             {
                 invalidTotalCount = invalidTotalCount,
                 invalidDataList = invalidDataList,
-                validTotalCount = validTotalCount,
-                totalCount = totalCount
             };
             return JsonConvert.SerializeObject(result);
         }
 
-        public string GetValidSSBViewData(InOriginViewModle model)
+        public string GetValidSSBViewData(ArrayList  arr)
         {
             var db = DbService.Instance;
 
             int validTotalCount = 0;
-            var validDataList = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode && it.ODD_Type == "1")
-                                .ToPageList(model.PageIndex, model.PageNum, ref validTotalCount);
+            var validDataList = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == ValueHandler.GetStringValue(arr[0]) && it.ODD_Type == "1")
+                                .ToPageList(int.Parse(ValueHandler.GetStringValue(arr[23])), int.Parse(ValueHandler.GetStringValue(arr[24])), ref validTotalCount);
 
-            var totalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode).Count();
+            //var totalCount = db.Queryable<SSB_OriginalDataDts>().Where(it => it.ODD_OD_Code == model.ODCode).Count();
             var result = new
             {
                 validDataList = validDataList,
                 validTotalCount = validTotalCount,
-                totalCount = totalCount
             };
             return JsonConvert.SerializeObject(result);
 
@@ -410,10 +409,10 @@ namespace DAL
                                     ORDER BY t.type");
         }
 
-        public string GetSSBDataTotalCount(InOriginViewModle model)
+        public string GetSSBDataTotalCount(ArrayList arr)
         {
             var db = DbService.Instance;
-            var data = db.Queryable<SSB_OriginalData>().Where(it => it.OD_Code == model.ODD_OD_Code).First();
+            var data = db.Queryable<SSB_OriginalData>().Where(it => it.OD_Code == ValueHandler.GetStringValue(arr[0])).First();
             var result = new InOriginCountModel
             {
                 TotalCount = 0,

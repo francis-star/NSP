@@ -1328,11 +1328,11 @@ namespace DAL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool BatchImportValidData(InOriginViewModle model)
+        public bool BatchImportValidData(string FileName, string JoinMan, string tablePre)
         {
             bool flag = false;
             #region 新导入数据库不读文件 使用程序sqlbulk导入
-            string LastFileName = model.FileName.Substring(model.FileName.LastIndexOf('/') + 1);
+            string LastFileName = FileName.Substring(FileName.LastIndexOf('/') + 1);
             string abPath = AppDomain.CurrentDomain.BaseDirectory + "\\UpFile\\Files\\";
             try
             {
@@ -1340,7 +1340,7 @@ namespace DAL
                 {
                     using (var client = new System.Net.WebClient())
                     {
-                        client.DownloadFile(model.FileName, HttpContext.Current.Request.PhysicalApplicationPath + "UpFile\\Files\\" + Path.GetFileName(LastFileName));
+                        client.DownloadFile(FileName, HttpContext.Current.Request.PhysicalApplicationPath + "UpFile\\Files\\" + Path.GetFileName(LastFileName));
                     }
                 }
                 else
@@ -1376,7 +1376,7 @@ namespace DAL
                                 {
                                     if (string.IsNullOrEmpty(cityCode))
                                     {
-                                        var tab = model.TableName + "_OriginalData";
+                                        var tab = tablePre + "_OriginalData";
                                         var db = DbService.Instance;
                                         var str1 = $@"SELECT OD_CityCode FROM " + tab + " WHERE OD_Code= '" + temp[0].Trim().Replace(" ", "") + "'";
                                         cityCode = db.Ado.SqlQuery<string>(str1, new { })[0];
@@ -1389,7 +1389,7 @@ namespace DAL
                                     dr["联系人"] = temp[4].Trim().Replace(" ", "");
                                     dr["联系电话"] = temp[5].Trim().Replace(" ", "").Replace(",", "").Replace("-", "").Replace("/", "");
                                     dr["是否计费"] = temp[6].Trim() == null ? "是" : "否";
-                                    dr["JoinMan"] = model.JoinMan;
+                                    dr["JoinMan"] = JoinMan;
                                     dr["ODD_Code"] = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 20);
                                     dr["城市编码"] = cityCode;
 
@@ -1406,7 +1406,7 @@ namespace DAL
                             {
                                 using (SqlBulkCopy bulkCopy = new SqlBulkCopy(destinationConnection, SqlBulkCopyOptions.Default, transaction))
                                 {
-                                    bulkCopy.DestinationTableName = model.TableName + "_OriginalDataValid"; //设置数据库中对象的表名
+                                    bulkCopy.DestinationTableName = tablePre + "_OriginalDataValid"; //设置数据库中对象的表名
                                     bulkCopy.BatchSize = 1000;
                                     bulkCopy.BulkCopyTimeout = 5000;
                                     //设置数据表table和数据库中表的列对应关系
