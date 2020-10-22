@@ -153,9 +153,9 @@ namespace BLL
         /// <returns></returns>
         public string GetInvalidSSBViewData(object obj)
         {
-            var arr = obj as InOriginViewModle;
+             //var arr = obj as InOriginViewModle;
 
-            //ArrayList arr = JSON.getPara(obj);
+            ArrayList arr = JSON.getPara(obj);
             var result = dAL_OriginalDataDts.GetInvalidSSBViewData(arr);
 
             return result;
@@ -168,9 +168,9 @@ namespace BLL
         /// <returns></returns>
         public string GetValidSSBViewData(object obj)
         {
-            var arr = obj as InOriginViewModle;
+            //var arr = obj as InOriginViewModle;
 
-            //ArrayList arr = JSON.getPara(obj);
+            ArrayList arr = JSON.getPara(obj);
             var result = dAL_OriginalDataDts.GetValidSSBViewData(arr);
 
             return result;
@@ -204,7 +204,7 @@ namespace BLL
         /// <returns></returns>
         public string GetSSBDataTotalCount(object obj)
         {
-            var arr = obj as InOriginViewModle;
+            ArrayList arr = JSON.getPara(obj);
             var result = dAL_OriginalDataDts.GetSSBDataTotalCount(arr);
             return null;
         }
